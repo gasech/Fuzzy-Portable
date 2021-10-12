@@ -1,0 +1,23 @@
+{
+  "name": "Focus",
+  "version": "0.1.0",
+  "description": "Small application for productivity",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm start",
+    "package": "npm package",
+    "make": "npm make"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "focus",
+    "productivity",
+    "timer"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron-prebuilt-compile": "15.0.0"
+  },
+  "dependencies": {}
+}
