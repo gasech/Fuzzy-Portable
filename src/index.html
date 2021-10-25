@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
@@ -33,9 +34,9 @@
 					<h1 class="ltitle">cronometer</h1>
 					<hr class="separator">
 					<div id="cTempo">
-						<p unselectable="on" id="cHoras">00</p>:
-						<p unselectable="on" id="cMinutos">00</p>:
-						<p unselectable="on" id="cSegundos">00</p>
+						<p id="cHoras">00</p>:
+						<p id="cMinutos">00</p>:
+						<p id="cSegundos">00</p>
 					</div>
 					<button class="bttn-bordered bttn-lg bttn-success" id="comecar" onclick="iniciarCronometro()">
 						<i class="fas fa-play"></i> <!-- Play -->
@@ -51,8 +52,8 @@
 					<h1 class="ltitle">timer</h1>
 					<hr class="separator">
 					<div id="tTempo">
-						<p unselectable="on" id="tMinutos">05</p>:
-						<p unselectable="on" id="tSegundos">00</p>
+						<p id="tMinutos">05</p>:
+						<p id="tSegundos">00</p>
 					</div>
 
 					<button class="bttn-bordered bttn-lg bttn-default" id="aumentar" onclick="aumentarTemporizador()">
@@ -83,12 +84,12 @@
 					<hr class="separator">
 					<form id="formtodolist">
 						<label for="taskname">name:</label>
-						<input type="text" id="inputname" name="inputname" autocomplete="off" maxlength="18">
+						<input type="text" id="input-name" name="inputname" autocomplete="off" maxlength="18" spellcheck="false">
 						<label for="taskname">description:</label>
-						<input type="text" id="inputdesc" name="inputdesc" autocomplete="off" maxlength="40">
+						<input type="text" id="input-desc" name="inputdesc" autocomplete="off" maxlength="40" spellcheck="false">
 						<input type="button" class="button-create" value="create task" onclick="createTask()">
 					</form>
-					<table id="tasksTable">
+					<table id="tasks-table">
 						<tr>
 							<th id="column-name">name</th>
 							<th id="column-desc">description</th>
@@ -96,7 +97,7 @@
 							<th id="column-delete"></th>
 						</tr>
 					</table>
-					<p id="help-text">*right-click in any status to toggle*</p>
+					<p id="help-text">* right-click in any status to toggle</p>
 				</div>
 			</div>
 		</div> <!-- Container -->

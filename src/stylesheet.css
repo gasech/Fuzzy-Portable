@@ -133,13 +133,6 @@ hr.separator2 {
 	letter-spacing: 7px;
 }
 
-.configTemporizador {
-	position: absolute;
-	top: 40px;
-	left: 40px;
-	text-align: left;
-}
-
 #timers-row {
 	margin-top: 50px;
 }
@@ -222,26 +215,30 @@ input:checked+.slider:before {
 }
 
 #formtodolist label {
+	font-weight: bold;
 	color: #ddd;
 }
 
 input:focus, select:focus, textarea:focus, button:focus {
 	outline: none;
+	text-decoration: none;
 }
 
-#inputname {
+#input-name {
 	background-color: #1E1E1E;
 	border: 1px solid #ddd;
 	width: 15%;
+	padding: 4px;
 	border-radius: 5px;
 	color: #ddd;
 }
 
-#inputdesc {
+#input-desc {
 	background-color: #1E1E1E;
 	border: 1px solid #ddd;
 	color: #ddd;
-	width: 28%;
+	padding: 4px;
+	width: 24%;
 	border-radius: 5px;
 }
 
@@ -266,26 +263,28 @@ input:focus, select:focus, textarea:focus, button:focus {
 	color: #ddd;
 }
 
-#tasksTable {
+#tasks-table {
 	border-collapse: collapse;
+	border-radius: 10px;
 	width: 80%;
-	margin-top: 5%;
+	margin-top: 3%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-#tasksTable td, #tasksTable th {
+#tasks-table td, #tasks-table th {
 	border: 1px solid #ddd;
 	background-color: #1E1E1E;
-	padding: 8px;
+	padding: 4px;
 	color: #ddd;
 }
 
-#tasksTable th {
+#tasks-table th {
+	background-color: #1E1E1E;
 	padding-top: 6px;
 	padding-bottom: 6px;
+	font-weight: bold;
 	text-align: center;
-	background-color: #1E1E1E;
 	color: #ddd;
 }
 

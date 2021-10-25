@@ -3,8 +3,8 @@ let idCounter = -1;
 let tasks = []
 
 function createTask() {
-	let inputName = document.getElementById("inputname").value;
-	let inputDesc = document.getElementById("inputdesc").value;
+	let inputName = document.getElementById("input-name").value;
+	let inputDesc = document.getElementById("input-desc").value;
 
 	if (inputName.length > 18) return alert("Please use 18 characters or less in task name.");
 	if (inputDesc.length > 40) return alert("Please use 40 characters or less in task description.");
@@ -15,7 +15,7 @@ function createTask() {
 
 	let currentTask = tasks[tasks.length - 1];
 
-	var table = document.getElementById("tasksTable");
+	var table = document.getElementById("tasks-table");
 	var row = table.insertRow(-1);
 	var cell1 = row.insertCell(0);
 	var cell2 = row.insertCell(1);
@@ -27,6 +27,9 @@ function createTask() {
 	document.getElementById(`status-${currentTask.id}`).style.color = "#ff5964";
 	document.getElementById(`status-${currentTask.id}`).style.fontSize = "18px";
 	cell4.innerHTML = `<input type="button" class="button-delete" value="delete" onclick="deleteTask(this, ${currentTask.id})"></input>`;
+
+	document.getElementById(`input-name`).value = "";
+	document.getElementById(`input-desc`).value = "";
 }
 
 function deleteTask(row, id) {
@@ -36,7 +39,7 @@ function deleteTask(row, id) {
 		}
 	}
 
-	document.getElementById("tasksTable").deleteRow(row.parentElement.parentElement.rowIndex);
+	document.getElementById("tasks-table").deleteRow(row.parentElement.parentElement.rowIndex);
 }
 
 function toggleTask(id) {
