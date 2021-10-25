@@ -1,15 +1,6 @@
-let idCounter = 0;
+let idCounter = -1;
 
-let tasks = [
-	{
-		id: 0,
-		name: "Code a ToDoList",
-		desc: "Make a basic ToDoList",
-		status: "doing"
-	}
-]
-
-// Status can be to do, doing or done.
+let tasks = []
 
 function createTask() {
 	let inputName = document.getElementById("inputname").value;
@@ -17,6 +8,7 @@ function createTask() {
 
 	if (inputName.length > 18) return alert("Please use 18 characters or less in task name.");
 	if (inputDesc.length > 40) return alert("Please use 40 characters or less in task description.");
+	if (inputName == "" || inputName == " ") return alert("Please do not leave the name area empty.");
 
 	idCounter++;
 	tasks.push({ id: idCounter, name: inputName, desc: inputDesc, status: "to do" });
@@ -31,14 +23,16 @@ function createTask() {
 	var cell4 = row.insertCell(3);
 	cell1.innerHTML = currentTask.name;
 	cell2.innerHTML = currentTask.desc;
-	cell3.innerHTML = `<span id="status${currentTask.id}" onclick="toggleTask(${currentTask.id})">${currentTask.status}</span>`;
-	cell4.innerHTML = `<input type="button" value="delete" onclick="deleteTask(this, ${currentTask.id})">`;
+	cell3.innerHTML = `<span id="status-${currentTask.id}" onclick="toggleTask(${currentTask.id})">${currentTask.status}</span>`;
+	document.getElementById(`status-${currentTask.id}`).style.color = "#ff5964";
+	document.getElementById(`status-${currentTask.id}`).style.fontSize = "18px";
+	cell4.innerHTML = `<input type="button" class="button-delete" value="delete" onclick="deleteTask(this, ${currentTask.id})"></input>`;
 }
 
 function deleteTask(row, id) {
 	for (let task of tasks) {
 		if (id == task.id) {
-			task.name = "deleted";
+			task.status = "deleted";
 		}
 	}
 
@@ -53,12 +47,15 @@ function toggleTask(id) {
 			switch (task.status) {
 				case "to do":
 					task.status = updatedStatus = "doing";
+					document.getElementById(`status-${task.id}`).style.color = "#feab3a";
 					break;
 				case "doing":
 					task.status = updatedStatus = "done";
+					document.getElementById(`status-${task.id}`).style.color = "#28b78d";
 					break;
 				case "done":
 					task.status = updatedStatus = "to do";
+					document.getElementById(`status-${task.id}`).style.color = "#ff5964";
 					break;
 				default:
 					console.log("error");
@@ -66,5 +63,5 @@ function toggleTask(id) {
 		}
 	}
 
-	document.getElementById(`status${id}`).innerHTML = `${updatedStatus}`;
+	document.getElementById(`status-${id}`).innerHTML = `${updatedStatus}`;
 }

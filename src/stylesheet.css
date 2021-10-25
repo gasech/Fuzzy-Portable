@@ -1,15 +1,5 @@
 @font-face {
-	font-family: myFirstFont;
-	src: url("fonts/Proxima Nova Alt Light.otf") format("opentype");
-}
-
-@font-face {
-	font-family: myFirstFontBold;
-	src: url("fonts/Proxima Nova Alt Light.otf") format("opentype");
-}
-
-@font-face {
-	font-family: clockFont;
+	font-family: ProximaNovaAltLight;
 	src: url("fonts/Proxima Nova Alt Light.otf") format("opentype");
 }
 
@@ -47,7 +37,7 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 	background-color: #1E1E1E;
-	font-family: myFirstFont;
+	font-family: ProximaNovaAltLight;
 	-webkit-user-select: none;
 	/* Safari */
 	-moz-user-select: none;
@@ -58,25 +48,13 @@ body {
 	/* Standard */
 }
 
-.ltitulo {
+.ltitle {
 	margin-top: 25%;
-	text-shadow: 2px 2px 8px #121212b0;
 	margin-top: 35px;
-	color: #DDDDDD;
+	color: #ddd;
 	font-size: 32px;
-	font-family: myFirstFontBold;
+	font-family: ProximaNovaAltLight;
 	text-align: center;
-}
-
-.rtitulo {
-	text-shadow: 2px 2px 8px #121212b0;
-	margin-top: 35px;
-	margin-left: 5%;
-	color: #DDDDDD;
-	font-family: myFirstFontBold;
-	position: absolute;
-	top: -35px;
-	left: 700px;
 }
 
 hr.separator {
@@ -137,9 +115,9 @@ hr.separator2 {
 	position: relative;
 	left: 50%;
 	margin-top: 10%;
-	font-family: clockFont;
+	font-family: ProximaNovaAltLight;
 	transform: translateX(-50%) translateY(-50%);
-	color: #DDDDDD;
+	color: #ddd;
 	font-size: 30px;
 	letter-spacing: 7px;
 }
@@ -148,9 +126,9 @@ hr.separator2 {
 	position: relative;
 	left: 50%;
 	margin-top: 1%;
-	font-family: clockFont;
+	font-family: ProximaNovaAltLight;
 	transform: translateX(-50%) translateY(-50%);
-	color: #DDDDDD;
+	color: #ddd;
 	font-size: 100px;
 	letter-spacing: 7px;
 }
@@ -239,8 +217,53 @@ input:checked+.slider:before {
 
 /* To Do List */
 
-#todolisttitulo {
+#todolisttitle {
 	margin-top: 5%;
+}
+
+#formtodolist label {
+	color: #ddd;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+	outline: none;
+}
+
+#inputname {
+	background-color: #1E1E1E;
+	border: 1px solid #ddd;
+	width: 15%;
+	border-radius: 5px;
+	color: #ddd;
+}
+
+#inputdesc {
+	background-color: #1E1E1E;
+	border: 1px solid #ddd;
+	color: #ddd;
+	width: 28%;
+	border-radius: 5px;
+}
+
+.button-create {
+	background-color: #ddd;
+	border: none;
+	color: #28b78d;
+	padding: 5px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 10px;
+}
+
+.button-create {
+	transition-duration: 0.4s;
+}
+
+.button-create:hover {
+	background-color: #28b78d;
+	color: #ddd;
 }
 
 #tasksTable {
@@ -249,14 +272,13 @@ input:checked+.slider:before {
 	margin-top: 5%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 30%;
 }
 
 #tasksTable td, #tasksTable th {
 	border: 1px solid #ddd;
 	background-color: #1E1E1E;
 	padding: 8px;
-	color: #DDDDDD;
+	color: #ddd;
 }
 
 #tasksTable th {
@@ -264,23 +286,28 @@ input:checked+.slider:before {
 	padding-bottom: 6px;
 	text-align: center;
 	background-color: #1E1E1E;
-	color: #DDDDDD;
+	color: #ddd;
 }
 
-#formtodolist label {
-	color: #DDDDDD;
+.button-delete {
+	background-color: #ddd;
+	border: none;
+	color: #f44336;
+	padding: 5px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 10px;
 }
 
-#inputname {
-	width: 24%;
+.button-delete {
+	transition-duration: 0.4s;
 }
 
-#inputdesc {
-	width: 49%;
-}
-
-#taskdesc {
-	margin-left: 15%;
+.button-delete:hover {
+	background-color: #f44336;
+	color: #ddd;
 }
 
 #column-name {
@@ -296,5 +323,11 @@ input:checked+.slider:before {
 }
 
 #column-delete {
-	width: 15%;
+	width: 10%;
+}
+
+#help-text {
+	margin-top: 15px;
+	margin-bottom: 30%;
+	color: #bbb;
 }

@@ -12,7 +12,7 @@
 	<script src="HackTimer/HackTimer.js"></script> <!-- HackTimer -->
 	<script src="https://kit.fontawesome.com/cf797e330d.js" crossorigin="anonymous"></script>
 	<!-- Icons by FontAwesome -->
-	<title>Dark Themed Podomoro</title>
+	<title>Focus</title>
 	<link rel="shortcut icon" href="favicon.ico" />
 </head>
 
@@ -30,12 +30,12 @@
 			</div>
 			<div class="row" id="timers-row">
 				<div class="col-sm">
-					<h1 class="ltitulo">cronometer</h1>
+					<h1 class="ltitle">cronometer</h1>
 					<hr class="separator">
 					<div id="cTempo">
-						<p unselectable="on" class="textShadow" id="cHoras">00</p>:
-						<p unselectable="on" class="textShadow" id="cMinutos">00</p>:
-						<p unselectable="on" class="textShadow" id="cSegundos">00</p>
+						<p unselectable="on" id="cHoras">00</p>:
+						<p unselectable="on" id="cMinutos">00</p>:
+						<p unselectable="on" id="cSegundos">00</p>
 					</div>
 					<button class="bttn-bordered bttn-lg bttn-success" id="comecar" onclick="iniciarCronometro()">
 						<i class="fas fa-play"></i> <!-- Play -->
@@ -48,11 +48,11 @@
 					</button>
 				</div>
 				<div class="col-sm">
-					<h1 class="ltitulo">timer</h1>
+					<h1 class="ltitle">timer</h1>
 					<hr class="separator">
 					<div id="tTempo">
-						<p unselectable="on" class="textShadow" id="tMinutos">05</p>:
-						<p unselectable="on" class="textShadow" id="tSegundos">00</p>
+						<p unselectable="on" id="tMinutos">05</p>:
+						<p unselectable="on" id="tSegundos">00</p>
 					</div>
 
 					<button class="bttn-bordered bttn-lg bttn-default" id="aumentar" onclick="aumentarTemporizador()">
@@ -79,14 +79,14 @@
 
 			<div class="row" id="todolist-row">
 				<div class="col-sm">
-					<h1 class="ltitulo" id="todolisttitulo">todolist</h1>
+					<h1 class="ltitle" id="todolisttitle">todolist</h1>
 					<hr class="separator">
 					<form id="formtodolist">
 						<label for="taskname">name:</label>
-						<input type="text" id="inputname" name="inputname" autocomplete="off"><br>
+						<input type="text" id="inputname" name="inputname" autocomplete="off" maxlength="18">
 						<label for="taskname">description:</label>
-						<input type="text" id="inputdesc" name="inputdesc" autocomplete="off">
-						<input type="button" value="Create Task" onclick="createTask()">
+						<input type="text" id="inputdesc" name="inputdesc" autocomplete="off" maxlength="40">
+						<input type="button" class="button-create" value="create task" onclick="createTask()">
 					</form>
 					<table id="tasksTable">
 						<tr>
@@ -96,6 +96,7 @@
 							<th id="column-delete"></th>
 						</tr>
 					</table>
+					<p id="help-text">*right-click in any status to toggle*</p>
 				</div>
 			</div>
 		</div> <!-- Container -->
