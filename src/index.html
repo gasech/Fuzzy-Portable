@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
@@ -29,7 +28,7 @@
 					<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" id="timers-row">
 				<div class="col-sm">
 					<h1 class="ltitulo">cronometer</h1>
 					<hr class="separator">
@@ -77,8 +76,29 @@
 					</button>
 				</div>
 			</div>
-		</div> <!-- Container -->
 
+			<div class="row" id="todolist-row">
+				<div class="col-sm">
+					<h1 class="ltitulo" id="todolisttitulo">todolist</h1>
+					<hr class="separator">
+					<form id="formtodolist">
+						<label for="taskname">name:</label>
+						<input type="text" id="inputname" name="inputname" autocomplete="off"><br>
+						<label for="taskname">description:</label>
+						<input type="text" id="inputdesc" name="inputdesc" autocomplete="off">
+						<input type="button" value="Create Task" onclick="createTask()">
+					</form>
+					<table id="tasksTable">
+						<tr>
+							<th id="column-name">name</th>
+							<th id="column-desc">description</th>
+							<th id="column-status">status</th>
+							<th id="column-delete"></th>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div> <!-- Container -->
 
 		<audio id="quietKnock">
 			<source src="sounds/quiet-knock.ogg" type="audio/ogg">
@@ -91,6 +111,7 @@
 	<script src="scripts/data.js"></script>
 	<script src="scripts/cronometro.js"></script>
 	<script src="scripts/temporizador.js"></script>
+	<script src="scripts/tarefas.js"></script>
 
 	<script src="./renderer.js"></script>
 </body>
