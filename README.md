@@ -1,6 +1,10 @@
 # Focus
 Small web application with a dark themed and clean look made for productivity.
 
+<p align="center">
+<img src="https://media.discordapp.net/attachments/362749870387363841/902418728610828288/Focus.jpg" alt="Focus Screenshot" width="650" height="450"/>
+</p>
+
 ## Programming language and Tools used
 
 <p align="left">
