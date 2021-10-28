@@ -48,7 +48,7 @@ body {
 	/* Standard */
 }
 
-.ltitle {
+.title {
 	margin-top: 25%;
 	margin-top: 35px;
 	color: #ddd;
@@ -81,29 +81,28 @@ hr.separator2 {
 	text-shadow: 2px 2px 8px #121212b0;
 }
 
-#cTempo {
+/* Cronometer */
+
+#cronometer-time {
 	font-size: 72px;
 	margin-bottom: 50px;
 	color: white;
 }
 
-#cTempo p {
+#cronometer-time p {
 	display: inline;
 }
 
-#tTempo {
+/* Timer */
+
+#timer-time {
 	font-size: 72px;
 	margin-bottom: 50px;
 	color: white;
 }
 
-#tTempo p {
+#timer-time p {
 	display: inline;
-}
-
-#centerClock {
-	position: absolute;
-	left: 50%;
 }
 
 #configIcone {
@@ -210,11 +209,11 @@ input:checked+.slider:before {
 
 /* To Do List */
 
-#todolisttitle {
+#todolist-title {
 	margin-top: 5%;
 }
 
-#formtodolist label {
+#todolist-form label {
 	font-weight: bold;
 	color: #ddd;
 }

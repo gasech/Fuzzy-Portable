@@ -31,48 +31,48 @@
 			</div>
 			<div class="row" id="timers-row">
 				<div class="col-sm">
-					<h1 class="ltitle">cronometer</h1>
+					<h1 class="title">cronometer</h1>
 					<hr class="separator">
-					<div id="cTempo">
-						<p id="cHoras">00</p>:
-						<p id="cMinutos">00</p>:
-						<p id="cSegundos">00</p>
+					<div id="cronometer-time">
+						<p id="cronometer-hours">00</p>:
+						<p id="cronometer-minutes">00</p>:
+						<p id="cronometer-seconds">00</p>
 					</div>
-					<button class="bttn-bordered bttn-lg bttn-success" id="comecar" onclick="iniciarCronometro()">
+					<button class="bttn-bordered bttn-lg bttn-success" id="comecar" onclick="startCronometer()">
 						<i class="fas fa-play"></i> <!-- Play -->
 					</button>
-					<button class="bttn-bordered bttn-lg bttn-warning" id="pausar" onclick="pausarCronometro()">
+					<button class="bttn-bordered bttn-lg bttn-warning" id="pausar" onclick="pauseCronometer()">
 						<i class="fas fa-pause"></i> <!-- Pause -->
 					</button>
-					<button class="bttn-bordered bttn-lg bttn-danger" id="zerar" onclick="zerarCronometro()">
+					<button class="bttn-bordered bttn-lg bttn-danger" id="zerar" onclick="resetCronometer()">
 						<i class="fas fa-stop"></i> <!-- Stop -->
 					</button>
 				</div>
 				<div class="col-sm">
-					<h1 class="ltitle">timer</h1>
+					<h1 class="title">timer</h1>
 					<hr class="separator">
-					<div id="tTempo">
-						<p id="tMinutos">05</p>:
-						<p id="tSegundos">00</p>
+					<div id="timer-time">
+						<p id="timer-minutes">05</p>:
+						<p id="timer-seconds">00</p>
 					</div>
 
-					<button class="bttn-bordered bttn-lg bttn-default" id="aumentar" onclick="aumentarTemporizador()">
+					<button class="bttn-bordered bttn-lg bttn-default" id="aumentar" onclick="increaseTimer()">
 						<i class="fas fa-plus"></i> <!-- Aumentar -->
 					</button>
 
-					<button class="bttn-bordered bttn-lg bttn-default" id="diminuir" onclick="diminuirTemporizador()">
+					<button class="bttn-bordered bttn-lg bttn-default" id="diminuir" onclick="decreaseTimer()">
 						<i class="fas fa-minus"></i> <!-- Diminuir -->
 					</button>
 
-					<button class="bttn-bordered bttn-lg bttn-success" id="comecar" onclick="iniciarTemporizador()">
+					<button class="bttn-bordered bttn-lg bttn-success" id="comecar" onclick="startTimer()">
 						<i class="fas fa-play"></i> <!-- Play -->
 					</button>
 
-					<button class="bttn-bordered bttn-lg bttn-warning" id="pausar" onclick="pausarTemporizador()">
+					<button class="bttn-bordered bttn-lg bttn-warning" id="pausar" onclick="pauseTimer()">
 						<i class="fas fa-pause"></i> <!-- Pause -->
 					</button>
 
-					<button class="bttn-bordered bttn-lg bttn-danger" id="resetar" onclick="resetarTemporizador()">
+					<button class="bttn-bordered bttn-lg bttn-danger" id="resetar" onclick="resetTimer()">
 						<i class="fas fa-redo"></i> <!-- Stop -->
 					</button>
 				</div>
@@ -80,9 +80,9 @@
 
 			<div class="row" id="todolist-row">
 				<div class="col-sm">
-					<h1 class="ltitle" id="todolisttitle">to-do list</h1>
+					<h1 class="title" id="todolist-title">to-do list</h1>
 					<hr class="separator">
-					<form id="formtodolist">
+					<form id="todolist-form">
 						<label for="taskname">name:</label>
 						<input type="text" id="input-name" name="inputname" autocomplete="off" maxlength="18" spellcheck="false">
 						<label for="taskname">description:</label>
@@ -109,11 +109,11 @@
 		</audio>
 	</div>
 
-	<script src="scripts/relogio.js"></script>
-	<script src="scripts/data.js"></script>
-	<script src="scripts/cronometro.js"></script>
-	<script src="scripts/temporizador.js"></script>
-	<script src="scripts/tarefas.js"></script>
+	<script src="scripts/clock.js"></script>
+	<script src="scripts/cronometer.js"></script>
+	<script src="scripts/date.js"></script>
+	<script src="scripts/task.js"></script>
+	<script src="scripts/timer.js"></script>
 
 	<script src="./renderer.js"></script>
 </body>

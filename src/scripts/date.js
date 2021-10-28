@@ -11,7 +11,6 @@ function showDate(){
     document.getElementById("MyDateDisplay").textContent = date;
     
     setTimeout(showTime, 1000);
-    
 }
 
 showDate();
