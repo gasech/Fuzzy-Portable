@@ -110,7 +110,7 @@ hr.separator2 {
 	left: 50px;
 }
 
-.date {
+#date-display {
 	position: relative;
 	left: 50%;
 	margin-top: 10%;
@@ -121,10 +121,10 @@ hr.separator2 {
 	letter-spacing: 7px;
 }
 
-.clock {
+#clock-display {
 	position: relative;
 	left: 50%;
-	margin-top: 1%;
+	margin-top: 3%;
 	font-family: ProximaNovaAltLight;
 	transform: translateX(-50%) translateY(-50%);
 	color: #ddd;

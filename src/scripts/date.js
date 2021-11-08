@@ -7,8 +7,8 @@ function showDate(){
     var dayM = d.getDate();
     
     var date = day + " " + dayM + " " + month + ", " + d.getFullYear();
-    document.getElementById("MyDateDisplay").innerText = date;
-    document.getElementById("MyDateDisplay").textContent = date;
+    document.getElementById("date-display").innerText = date;
+    document.getElementById("date-display").textContent = date;
     
     setTimeout(showTime, 1000);
 }
