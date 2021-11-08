@@ -85,7 +85,7 @@ hr.separator2 {
 
 #cronometer-time {
 	font-size: 72px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	color: white;
 }
 
@@ -97,7 +97,7 @@ hr.separator2 {
 
 #timer-time {
 	font-size: 72px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	color: white;
 }
 
@@ -225,6 +225,7 @@ input:focus, select:focus, textarea:focus, button:focus {
 
 #input-name {
 	background-color: #1E1E1E;
+	margin-right:10px;
 	border: 1px solid #ddd;
 	width: 15%;
 	padding: 4px;
@@ -239,27 +240,6 @@ input:focus, select:focus, textarea:focus, button:focus {
 	padding: 4px;
 	width: 24%;
 	border-radius: 5px;
-}
-
-.button-create {
-	background-color: #ddd;
-	border: none;
-	color: #28b78d;
-	padding: 5px 15px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	border-radius: 10px;
-}
-
-.button-create {
-	transition-duration: 0.4s;
-}
-
-.button-create:hover {
-	background-color: #28b78d;
-	color: #ddd;
 }
 
 #tasks-table {
@@ -284,27 +264,6 @@ input:focus, select:focus, textarea:focus, button:focus {
 	padding-bottom: 6px;
 	font-weight: bold;
 	text-align: center;
-	color: #ddd;
-}
-
-.button-delete {
-	background-color: #ddd;
-	border: none;
-	color: #f44336;
-	padding: 5px 15px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	border-radius: 10px;
-}
-
-.button-delete {
-	transition-duration: 0.4s;
-}
-
-.button-delete:hover {
-	background-color: #f44336;
 	color: #ddd;
 }
 

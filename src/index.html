@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="bttn.min.css" type="text/css" />
 	<link rel="stylesheet" href="stylesheet.css" type="text/css" />
 	<link rel="stylesheet" href="loader.css" type="text/css" /> <!-- Loader CSS -->
-	<script src="loader.js"></script> <!-- Loader Script -->
+	<script src="scripts/loader.js"></script> <!-- Loader Script -->
 	<script src="HackTimer/HackTimer.js"></script> <!-- HackTimer -->
 	<script src="https://kit.fontawesome.com/cf797e330d.js" crossorigin="anonymous"></script>
 	<!-- Icons by FontAwesome -->
@@ -18,18 +18,17 @@
 </head>
 
 <body onload="loadPage()" style="margin:0;">
+	<noscript>You need to enable JavaScript to run this app.</noscript>
 	<div id="loader" class="shadow"></div>
-
 	<div style="display:none;" id="content" class="animate-bottom">
-
 		<div class="container">
-			<div class="row">
+			<div class="row"> <!-- Clock and Date row -->
 				<div class="col-sm">
 					<div id="MyDateDisplay" class="date" onload="showDate()"></div>
 					<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
 				</div>
 			</div>
-			<div class="row" id="timers-row">
+			<div class="row" id="timers-row"> <!-- Cronometer and Timers row -->
 				<div class="col-sm">
 					<h1 class="title">cronometer</h1>
 					<hr class="separator">
@@ -38,13 +37,13 @@
 						<p id="cronometer-minutes">00</p>:
 						<p id="cronometer-seconds">00</p>
 					</div>
-					<button class="bttn-bordered bttn-lg bttn-success" id="comecar" onclick="startCronometer()">
+					<button class="bttn-minimal bttn-md bttn-default" id="start-button" onclick="startCronometer()">
 						<i class="fas fa-play"></i> <!-- Play -->
 					</button>
-					<button class="bttn-bordered bttn-lg bttn-warning" id="pausar" onclick="pauseCronometer()">
+					<button class="bttn-minimal bttn-md bttn-default" id="pause-button" onclick="pauseCronometer()">
 						<i class="fas fa-pause"></i> <!-- Pause -->
 					</button>
-					<button class="bttn-bordered bttn-lg bttn-danger" id="zerar" onclick="resetCronometer()">
+					<button class="bttn-minimal bttn-md bttn-default" id="reset-button" onclick="resetCronometer()">
 						<i class="fas fa-stop"></i> <!-- Stop -->
 					</button>
 				</div>
@@ -56,29 +55,29 @@
 						<p id="timer-seconds">00</p>
 					</div>
 
-					<button class="bttn-bordered bttn-lg bttn-default" id="aumentar" onclick="increaseTimer()">
+					<button class="bttn-minimal bttn-md bttn-default" id="increase-button" onclick="increaseTimer()">
 						<i class="fas fa-plus"></i> <!-- Aumentar -->
 					</button>
 
-					<button class="bttn-bordered bttn-lg bttn-default" id="diminuir" onclick="decreaseTimer()">
+					<button class="bttn-minimal bttn-md bttn-default" id="decrease-button" onclick="decreaseTimer()">
 						<i class="fas fa-minus"></i> <!-- Diminuir -->
 					</button>
 
-					<button class="bttn-bordered bttn-lg bttn-success" id="comecar" onclick="startTimer()">
+					<button class="bttn-minimal bttn-md bttn-default" id="start-button" onclick="startTimer()">
 						<i class="fas fa-play"></i> <!-- Play -->
 					</button>
 
-					<button class="bttn-bordered bttn-lg bttn-warning" id="pausar" onclick="pauseTimer()">
+					<button class="bttn-minimal bttn-md bttn-default" id="pause-button" onclick="pauseTimer()">
 						<i class="fas fa-pause"></i> <!-- Pause -->
 					</button>
 
-					<button class="bttn-bordered bttn-lg bttn-danger" id="resetar" onclick="resetTimer()">
+					<button class="bttn-minimal bttn-md bttn-default" id="reset-button" onclick="resetTimer()">
 						<i class="fas fa-redo"></i> <!-- Stop -->
 					</button>
 				</div>
 			</div>
 
-			<div class="row" id="todolist-row">
+			<div class="row" id="todolist-row"> <!-- To-do List Row -->
 				<div class="col-sm">
 					<h1 class="title" id="todolist-title">to-do list</h1>
 					<hr class="separator">
@@ -87,7 +86,7 @@
 						<input type="text" id="input-name" name="inputname" autocomplete="off" maxlength="18" spellcheck="false">
 						<label for="taskname">description:</label>
 						<input type="text" id="input-desc" name="inputdesc" autocomplete="off" maxlength="40" spellcheck="false">
-						<input type="button" class="button-create" value="create task" onclick="createTask()">
+						<button type="button" class="bttn-minimal bttn-md bttn-default" onclick="createTask()">create</button>
 					</form>
 					<table id="tasks-table">
 						<tr>
@@ -97,10 +96,11 @@
 							<th id="column-delete"></th>
 						</tr>
 					</table>
-					<p id="help-text">* right-click in any status to toggle</p>
+					<p id="help-text">* right-click in any status to toggle between to do, doing or done.</p>
 				</div>
 			</div>
-		</div> <!-- Container -->
+		
+		</div> 
 
 		<audio id="quietKnock">
 			<source src="sounds/quiet-knock.ogg" type="audio/ogg">

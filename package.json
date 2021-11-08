@@ -1,8 +1,8 @@
 {
   "name": "focus",
   "productName": "focus",
-  "version": "1.0.0",
-  "description": "My Electron application description",
+  "version": "0.1.0",
+  "description": "Small web application with a dark themed and clean look made for productivity.",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",

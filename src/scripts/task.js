@@ -24,9 +24,9 @@ function createTask() {
 	cell1.innerHTML = currentTask.name;
 	cell2.innerHTML = currentTask.desc;
 	cell3.innerHTML = `<span id="status-${currentTask.id}" onclick="toggleTask(${currentTask.id})">${currentTask.status}</span>`;
-	document.getElementById(`status-${currentTask.id}`).style.color = "#ff5964";
+	document.getElementById(`status-${currentTask.id}`).style.color = "#F50C55";
 	document.getElementById(`status-${currentTask.id}`).style.fontSize = "18px";
-	cell4.innerHTML = `<input type="button" class="button-delete" value="delete" onclick="deleteTask(this, ${currentTask.id})"></input>`;
+	cell4.innerHTML = `<button type="button" class="bttn-minimal bttn-sm bttn-default" onclick="deleteTask(this, ${currentTask.id})">delete</button>`;
 
 	document.getElementById(`input-name`).value = "";
 	document.getElementById(`input-desc`).value = "";
@@ -50,15 +50,15 @@ function toggleTask(id) {
 			switch (task.status) {
 				case "to do":
 					task.status = updatedStatus = "doing";
-					document.getElementById(`status-${task.id}`).style.color = "#feab3a";
+					document.getElementById(`status-${task.id}`).style.color = "#0CF5F5";
 					break;
 				case "doing":
 					task.status = updatedStatus = "done";
-					document.getElementById(`status-${task.id}`).style.color = "#28b78d";
+					document.getElementById(`status-${task.id}`).style.color = "#0CF51A";
 					break;
 				case "done":
 					task.status = updatedStatus = "to do";
-					document.getElementById(`status-${task.id}`).style.color = "#ff5964";
+					document.getElementById(`status-${task.id}`).style.color = "#F50C55";
 					break;
 				default:
 					console.log("error");
