@@ -17,6 +17,7 @@ Small web application with a dark themed and clean look made for productivity.
 
 ## Features
 
+* Date
 * Clock
 * Timer
 * Cronometer
