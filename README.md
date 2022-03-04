@@ -1,5 +1,5 @@
-# Focus
-Small web application with a dark themed and clean look made for productivity.
+# Fuzzy Portable
+Portable version of <a href="https://github.com/gasech/Fuzzy-Potato" target="_blank">Fuzzy Potato</a>
 
 <p align="center">
 <img src="https://media.discordapp.net/attachments/362749870387363841/902418728610828288/Focus.jpg" alt="Focus Screenshot" width="650" height="450"/>
