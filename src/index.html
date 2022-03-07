@@ -2,120 +2,121 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-	<link rel="stylesheet" href="bttn.min.css" type="text/css" />
-	<link rel="stylesheet" href="stylesheet.css" type="text/css" />
-	<link rel="stylesheet" href="loader.css" type="text/css" /> <!-- Loader CSS -->
-	<script src="scripts/loader.js"></script> <!-- Loader Script -->
-	<script src="HackTimer/HackTimer.js"></script> <!-- HackTimer -->
-	<script src="https://kit.fontawesome.com/cf797e330d.js" crossorigin="anonymous"></script>
-	<!-- Icons by FontAwesome -->
-	<title>Focus</title>
-	<link rel="shortcut icon" href="favicon.ico" />
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="bttn.min.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheet.css" type="text/css" />
+    <link rel="stylesheet" href="loader.css" type="text/css" />
+    <!-- Loader CSS -->
+    <script src="scripts/loader.js"></script>
+    <!-- Loader Script -->
+    <script src="HackTimer/HackTimer.js"></script>
+    <!-- HackTimer -->
+    <script src="https://kit.fontawesome.com/cf797e330d.js" crossorigin="anonymous"></script>
+    <!-- Icons by FontAwesome -->
+    <title>Focus</title>
+    <link rel="shortcut icon" href="favicon.ico" />
 </head>
 
 <body onload="loadPage()" style="margin:0;">
-	<noscript>You need to enable JavaScript to run this app.</noscript>
-	<div id="loader" class="shadow"></div>
-	<div style="display:none;" id="content" class="animate-bottom">
-		<div class="container">
-			<div class="row"> <!-- Clock and Date row -->
-				<div class="col-sm">
-					<div id="date-display" onload="showDate()"></div>
-					<div id="clock-display" onload="showTime()"></div>
-				</div>
-			</div>
-			<div class="row" id="timers-row"> <!-- Cronometer and Timers row -->
-				<div class="col-sm">
-					<h1 class="title">cronometer</h1>
-					<hr class="separator">
-					<div id="cronometer-time">
-						<p id="cronometer-hours">00</p>:
-						<p id="cronometer-minutes">00</p>:
-						<p id="cronometer-seconds">00</p>
-					</div>
-					<button class="bttn-minimal bttn-md bttn-default" id="start-button" onclick="startCronometer()">
-						<i class="fas fa-play"></i> <!-- Play -->
-					</button>
-					<button class="bttn-minimal bttn-md bttn-default" id="pause-button" onclick="pauseCronometer()">
-						<i class="fas fa-pause"></i> <!-- Pause -->
-					</button>
-					<button class="bttn-minimal bttn-md bttn-default" id="reset-button" onclick="resetCronometer()">
-						<i class="fas fa-stop"></i> <!-- Stop -->
-					</button>
-				</div>
-				<div class="col-sm">
-					<h1 class="title">timer</h1>
-					<hr class="separator">
-					<div id="timer-time">
-						<p id="timer-minutes">05</p>:
-						<p id="timer-seconds">00</p>
-					</div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="loader" class="shadow"></div>
+    <div style="display:none;" id="content" class="animate-bottom">
+        <div class="container">
+            <div class="row">
+                <!-- Clock and Date row -->
+                <div class="col-sm">
+                    <div id="date-display" onload="showDate()"></div>
+                    <div id="clock-display" onload="showTime()"></div>
+                </div>
+            </div>
+            <div class="row" id="timers-row">
+                <!-- Cronometer and Timers row -->
+                <div class="col-sm">
+                    <h1 class="title">cronometer</h1>
+                    <hr class="separator">
+                    <div id="cronometer-time">
+                        <p id="cronometer-hours">00</p>:
+                        <p id="cronometer-minutes">00</p>:
+                        <p id="cronometer-seconds">00</p>
+                    </div>
+                    <button class="bttn-minimal bttn-md bttn-default" id="start-button" onclick="startCronometer()">
+                        <i class="fas fa-play"></i> <!-- Play -->
+                    </button>
+                    <button class="bttn-minimal bttn-md bttn-default" id="pause-button" onclick="pauseCronometer()">
+                        <i class="fas fa-pause"></i> <!-- Pause -->
+                    </button>
+                    <button class="bttn-minimal bttn-md bttn-default" id="reset-button" onclick="resetCronometer()">
+                        <i class="fas fa-stop"></i> <!-- Stop -->
+                    </button>
+                </div>
+                <div class="col-sm">
+                    <h1 class="title">timer</h1>
+                    <hr class="separator">
+                    <div id="timer-time">
+                        <p id="timer-minutes">05</p>:
+                        <p id="timer-seconds">00</p>
+                    </div>
 
-					<button class="bttn-minimal bttn-md bttn-default" id="increase-button" onclick="increaseTimer()">
-						<i class="fas fa-plus"></i> <!-- Aumentar -->
-					</button>
+                    <button class="bttn-minimal bttn-md bttn-default" id="increase-button" onclick="increaseTimer()">
+                        <i class="fas fa-plus"></i> <!-- Aumentar -->
+                    </button>
 
-					<button class="bttn-minimal bttn-md bttn-default" id="decrease-button" onclick="decreaseTimer()">
-						<i class="fas fa-minus"></i> <!-- Diminuir -->
-					</button>
+                    <button class="bttn-minimal bttn-md bttn-default" id="decrease-button" onclick="decreaseTimer()">
+                        <i class="fas fa-minus"></i> <!-- Diminuir -->
+                    </button>
 
-					<button class="bttn-minimal bttn-md bttn-default" id="start-button" onclick="startTimer()">
-						<i class="fas fa-play"></i> <!-- Play -->
-					</button>
+                    <button class="bttn-minimal bttn-md bttn-default" id="start-button" onclick="startTimer()">
+                        <i class="fas fa-play"></i> <!-- Play -->
+                    </button>
 
-					<button class="bttn-minimal bttn-md bttn-default" id="pause-button" onclick="pauseTimer()">
-						<i class="fas fa-pause"></i> <!-- Pause -->
-					</button>
+                    <button class="bttn-minimal bttn-md bttn-default" id="pause-button" onclick="pauseTimer()">
+                        <i class="fas fa-pause"></i> <!-- Pause -->
+                    </button>
 
-					<button class="bttn-minimal bttn-md bttn-default" id="reset-button" onclick="resetTimer()">
-						<i class="fas fa-redo"></i> <!-- Stop -->
-					</button>
-				</div>
-			</div>
+                    <button class="bttn-minimal bttn-md bttn-default" id="reset-button" onclick="resetTimer()">
+                        <i class="fas fa-redo"></i> <!-- Stop -->
+                    </button>
+                </div>
+            </div>
 
-			<div class="row" id="todolist-row"> <!-- To-do List Row -->
-				<div class="col-sm">
-					<h1 class="title" id="todolist-title">to-do list</h1>
-					<hr class="separator">
-					<form id="todolist-form">
-						<label for="taskname">name:</label>
-						<input type="text" id="input-name" name="inputname" autocomplete="off" maxlength="18" spellcheck="false">
-						<label for="taskname">description:</label>
-						<input type="text" id="input-desc" name="inputdesc" autocomplete="off" maxlength="40" spellcheck="false">
-						<button type="button" class="bttn-minimal bttn-md bttn-default" onclick="createTask()">create</button>
-					</form>
-					<table id="tasks-table">
-						<tr>
-							<th id="column-name">name</th>
-							<th id="column-desc">description</th>
-							<th id="column-status">status</th>
-							<th id="column-delete"></th>
-						</tr>
-					</table>
-					<p id="help-text">* right-click in any status to toggle between to do, doing or done.</p>
-				</div>
-			</div>
-		
-		</div> 
+            <div class="row" id="todolist-row">
+                <!-- To-do List Row -->
+                <div class="col-sm">
+                    <h1 class="title" id="todolist-title">to-do list</h1>
+                    <hr class="separator">
+                    <form id="todolist-form" onSubmit="return false;">
+                        <label for="taskname">name:</label>
+                        <input type="text" id="input-name" name="inputname" autocomplete="off" maxlength="18" spellcheck="false">
+                        <label for="taskname">description:</label>
+                        <input type="text" id="input-desc" name="inputdesc" autocomplete="off" maxlength="40" spellcheck="false">
+                        <input type="submit" class="bttn-minimal bttn-md bttn-default" value="create" onclick="createTask()">
+                    </form>
 
-		<audio id="quietKnock">
-			<source src="sounds/quiet-knock.ogg" type="audio/ogg">
-			<source src="sounds/quiet-knock.mp3" type="audio/mpeg">
+                    <ul id="task-test">
+                    </ul>
+
+                    <p id="help-text">* right-click in any status to toggle between to do, doing or done.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <audio id="quietKnock">
+			<source src=" sounds/quiet-knock.ogg " type=" audio/ogg ">
+			<source src=" sounds/quiet-knock.mp3 " type=" audio/mpeg ">
 			Your browser does not support the audio element.
 		</audio>
-	</div>
+    </div>
 
-	<script src="scripts/clock.js"></script>
-	<script src="scripts/cronometer.js"></script>
-	<script src="scripts/date.js"></script>
-	<script src="scripts/task.js"></script>
-	<script src="scripts/timer.js"></script>
+    <script src=" scripts/clock.js "></script>
+    <script src=" scripts/cronometer.js "></script>
+    <script src=" scripts/date.js "></script>
+    <script src=" scripts/task.js "></script>
+    <script src=" scripts/timer.js "></script>
 
-	<script src="./renderer.js"></script>
+    <!-- <script src=" ./renderer.js "></script> -->
 </body>
 
 </html>
