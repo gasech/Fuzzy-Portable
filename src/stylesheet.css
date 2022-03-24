@@ -67,14 +67,6 @@ hr.separator {
     margin-left: 20%;
 }
 
-hr.separator2 {
-    border: 1px solid #ddd;
-    margin-right: 20%;
-    margin-left: 20%;
-    margin-top: 15%;
-    margin-bottom: 15%;
-}
-
 .shadow {
     -moz-box-shadow: inset 0 0 10px #121212b0;
     -webkit-box-shadow: inset 0 0 10px #121212b0;
@@ -83,19 +75,6 @@ hr.separator2 {
 
 .textShadow {
     text-shadow: 2px 2px 8px #121212b0;
-}
-
-
-/* Icons */
-
-#img-icon {
-    width: 15px;
-    height: 15px;
-}
-
-#garbage-icon {
-    width: 15px;
-    height: 15px;
 }
 
 
@@ -195,7 +174,7 @@ hr.separator2 {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: #ddd;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -232,75 +211,45 @@ input:checked+.slider:before {
     margin-top: 5%;
 }
 
-#todolist-form label {
-    font-weight: bold;
-    color: #ddd;
+.create-task {
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
 }
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
+*:focus {
     outline: none;
     text-decoration: none;
 }
 
-#input-name {
-    background-color: #292929;
-    margin-right: 10px;
-    border: 1px solid #ddd;
-    width: 15%;
-    padding: 4px;
-    border-radius: 5px;
-    color: #ddd;
-}
-
-#input-desc {
-    background-color: #292929;
-    border: 1px solid #ddd;
-    color: #ddd;
-    padding: 4px;
-    width: 24%;
-    border-radius: 5px;
-}
-
-#help-text {
-    margin-top: 15px;
-    margin-bottom: 30%;
-    color: #bbb;
-}
-
-#task-test {
+#main-task-list {
     list-style-type: none;
     color: #ddd;
     width: 80%;
-    margin-top: 3%;
+    margin-top: 1%;
     margin-left: auto;
     margin-right: auto;
 }
 
-#task-test li {
+#main-task-list li {
     font-style: normal;
     font-weight: normal;
-    font-size: 21px;
-    margin-top: 10px;
     color: #ddd;
+}
+
+.primary-task {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.8%;
+    padding: 10px;
     height: 50px;
+    font-size: 21px;
     background-color: #3A3A3A;
     border-collapse: collapse;
     border-radius: 10px;
     filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
 }
 
-#generalstatus {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    top: 11px;
-    left: 11px;
-}
-
-.statusball {
+.task-status {
     width: 26px;
     height: 26px;
     background: #F50C55;
@@ -308,19 +257,33 @@ button:focus {
     border-radius: 50%;
 }
 
-.statusname {
+.task-name {
     margin-left: 10px;
     text-align: left;
 }
 
-.statusdesc {
+.task-desc {
     margin-left: 8px;
 }
 
-.status-delete {
+.task-buttons {
     float: right;
-    width: 15%;
+    width: 20%;
     margin-left: auto;
+}
+
+.secundary-task {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.8%;
+    padding: 10px;
+    font-size: 20px;
+    height: 48px;
+    background-color: #3A3A3A;
+    border-collapse: collapse;
+    border-radius: 10px;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
 }
 
 .btn {
@@ -335,6 +298,126 @@ button:focus {
 
 /* Darker background on mouse-over */
 
-.btn:hover {
+.btn:hover,
+.btn-create:hover {
     background-color: rgb(131, 131, 131);
+}
+
+#help-text {
+    margin-top: 15px;
+    margin-bottom: 30%;
+    color: #bbb;
+}
+
+
+/* Alert Box */
+
+#alert-box {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 350px;
+    background-color: #3A3A3A;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 60px;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.9s;
+    animation-name: fadeIn;
+    animation-duration: 0.9s;
+}
+
+#create-sub-task,
+#edit-main-task,
+#edit-sub-task {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 350px;
+    background-color: #3A3A3A;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 60px;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.9s;
+    animation-name: fadeIn;
+    animation-duration: 0.9s;
+}
+
+.alert-box-title {
+    width: 150px;
+    font-weight: lighter;
+    color: white;
+    position: relative;
+    margin-left: 90px;
+    margin-top: 30px;
+}
+
+.close-alert {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
+
+#input-name,
+#sub-input-name,
+#new-input-name {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 44px;
+    width: 80%;
+    border-radius: 5px;
+    color: #C4C4C4;
+}
+
+#input-desc,
+#sub-input-desc,
+#new-input-desc {
+    margin-top: 15px;
+    background: none;
+    border: none;
+    color: #C4C4C4;
+    font-size: 19px;
+    width: 80%;
+    border-radius: 5px;
+    resize: none;
+}
+
+.btn-create {
+    position: fixed;
+    bottom: 5px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(49, 49, 49);
+    border: none;
+    color: #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 19px;
+    cursor: pointer;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
 }

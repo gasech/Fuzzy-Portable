@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="bttn.min.css" type="text/css" />
     <link rel="stylesheet" href="stylesheet.css" type="text/css" />
@@ -15,7 +14,7 @@
     <!-- HackTimer -->
     <script src="https://kit.fontawesome.com/cf797e330d.js" crossorigin="anonymous"></script>
     <!-- Icons by FontAwesome -->
-    <title>Focus</title>
+    <title>Fuzzy Portable</title>
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
 
@@ -86,37 +85,48 @@
                 <div class="col-sm">
                     <h1 class="title" id="todolist-title">to-do list</h1>
                     <hr class="separator">
-                    <form id="todolist-form" onSubmit="return false;">
-                        <label for="taskname">name:</label>
-                        <input type="text" id="input-name" name="inputname" autocomplete="off" maxlength="18" spellcheck="false">
-                        <label for="taskname">description:</label>
-                        <input type="text" id="input-desc" name="inputdesc" autocomplete="off" maxlength="40" spellcheck="false">
-                        <input type="submit" class="bttn-minimal bttn-md bttn-default" value="create" onclick="createTask()">
-                    </form>
-
-                    <ul id="task-test">
+                    <button class="btn create-task" onclick="toggleCreateBoxAlert()">Create Task</button>
+                    <ul id="main-task-list">
                     </ul>
 
                     <p id="help-text">* right-click in any status to toggle between to do, doing or done.</p>
                 </div>
             </div>
+        </div>
 
+        <div id="alerts">
+            <div id="alert-box">
+                <button class="btn close-alert" onclick="toggleCreateBoxAlert()"><i class="fa fa-close"></i></button>
+                <form id="todolist-form" onSubmit="return false;">
+                    <h3 class="alert-box-title">Create Task</h3>
+                    <input type="text" id="input-name" placeholder="+ Add a Name" name="inputname" autocomplete="off" maxlength="18" spellcheck="false"><br>
+                    <textarea id="input-desc" cols="2" placeholder="+ Add a description" name="inputdesc" autocomplete="off" maxlength="40" spellcheck="false"></textarea><br>
+                    <input type="submit" class="btn-create" value="create" onclick="createTask()" />
+                </form>
+            </div>
         </div>
 
         <audio id="quietKnock">
-			<source src=" sounds/quiet-knock.ogg " type=" audio/ogg ">
-			<source src=" sounds/quiet-knock.mp3 " type=" audio/mpeg ">
+			<source src="sounds/quiet-knock.ogg" type="audio/ogg">
+			<source src="sounds/quiet-knock.mp3" type="audio/mpeg">
 			Your browser does not support the audio element.
 		</audio>
     </div>
 
-    <script src=" scripts/clock.js "></script>
-    <script src=" scripts/cronometer.js "></script>
-    <script src=" scripts/date.js "></script>
-    <script src=" scripts/task.js "></script>
-    <script src=" scripts/timer.js "></script>
-
-    <!-- <script src=" ./renderer.js "></script> -->
+    <script src="scripts/clock.js"></script>
+    <!-- Clock Script -->
+    <script src="scripts/date.js"></script>
+    <!-- Date Script -->
+    <script src="scripts/cronometer.js"></script>
+    <!-- Cronometer Script -->
+    <script src="scripts/timer.js"></script>
+    <!-- Timer Script -->
+    <script src="scripts/taskloader.js"></script>
+    <!-- Task Loader Script -->
+    <script src="scripts/task.js"></script>
+    <!-- Task Creator Script -->
+    <script src="scripts/alert.js"></script>
+    <!-- Alert Box Script -->
 </body>
 
 </html>
