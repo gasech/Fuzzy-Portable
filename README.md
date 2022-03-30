@@ -2,8 +2,8 @@
 Portable version of <a href="https://github.com/gasech/Fuzzy-Potato" target="_blank">Fuzzy Potato</a>
 
 <p align="center">
-<img src="https://media.discordapp.net/attachments/362749870387363841/958728059412967474/unknown.png?width=1115&height=676" alt="Focus Screenshot" width="650" height="450"/>
-<img src="https://media.discordapp.net/attachments/362749870387363841/958729854554083378/unknown.png?width=1135&height=676" alt="Focus Screenshot" width="650" height="450"/>
+<img src="https://media.discordapp.net/attachments/362749870387363841/958728059412967474/unknown.png?width=1115&height=676" alt="Focus Screenshot" width="800" height="450"/>
+<img src="https://media.discordapp.net/attachments/362749870387363841/958729854554083378/unknown.png?width=1135&height=676" alt="Focus Screenshot 2" width="800" height="450"/>
 </p>
 
 ## Programming language and Tools used
