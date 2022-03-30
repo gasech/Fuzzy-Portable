@@ -1,7 +1,7 @@
 {
     "name": "Fuzzy-Portable",
     "productName": "Fuzzy-Portable",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Small web application with a dark themed and clean look made for productivity.",
     "main": "src/index.js",
     "scripts": {
