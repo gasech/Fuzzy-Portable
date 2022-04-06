@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain} = require('electron');
 const path = require('path');
 const ipc = ipcMain;
 
@@ -10,6 +10,7 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 const createWindow = () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
+        icon: '',
         width: 1245,
         height: 730,
         resizable: false,

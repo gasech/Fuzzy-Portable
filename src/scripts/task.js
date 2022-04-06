@@ -1,41 +1,24 @@
 /**
- * Creates Task Element into the page, inserts into tasks array and Local Storage.
+ * Creates Task Element into the page, inserts into tasks array and updates JSON file.
  * @param {object} task 
  * @returns Alert Message if InputName is empty.
- */
+*/
 function createTask(task) {
     let inputName = document.getElementById("input-name");
     let inputDesc = document.getElementById("input-desc");
 
-    if (inputName.value.length > 18) return alert("Please use 18 characters or less in task name.");
-    if (inputDesc.value.length > 40) return alert("Please use 40 characters or less in task description.");
-    if (inputName.value == "" || inputName.value == " ") return alert("Please do not leave the name area empty.");
+    if (inputName.value.length > 18) return customAlertBox("Please use 18 characters or less in task name.");
+    if (inputDesc.value.length > 40) return customAlertBox("Please use 40 characters or less in task description.");
+    if (inputName.value == "" || inputName.value == " ") return customAlertBox("Please do not leave the name area empty.");
 
-    let TaskId = tasks.length;
-    tasks.push({ id: TaskId, name: inputName.value, desc: inputDesc.value, status: "to do", subtasks: [] });
-    task = tasks[tasks.length - 1];
+    let taskId = tasks.length;
+    tasks.push({ id: taskId, name: inputName.value, desc: inputDesc.value, status: "to do", subtasks: [] });
+    task = tasks[taskId - 1];
 
     inputName.value = "";
     inputDesc.value = "";
 
-    let ul = document.getElementById("main-task-list");
-    let li = document.createElement("li");
-    li.setAttribute('id', `main-task-${task.id}`);
-    li.innerHTML = `<div class="primary-task">
-	                        <div class="task-status" id="primary-task-status-${task.id}" onclick="toggleTask(${task.id})"></div>
-	                        <div class="task-name" id="primary-task-name-${task.id}">${task.name} </div>
-	                        <div class="task-desc" id="primary-task-desc-${task.id}">${task.desc}</div>
-                            <div class="task-buttons">      
-                                <button class="btn" onclick="createSubTaskAlertBox(${task.id})"><i class="fa fa-plus"></i></button>
-                                <button class="btn" onclick="editMainTaskAlertBox(${task.id},'${task.name}','${task.desc}')"><i class="fa fa-pencil"></i></button>
-                                <button class="btn" onclick="deleteTask(${task.id})"><i class="fa fa-trash"></i></button>
-                            </div>
-                        </div>
-                        <ul id="secondary-task-list-${task.id}">
-                            
-                        </ul>`;
-    ul.appendChild(li);
-
+    createTaskElement(task);
     toggleCreateBoxAlert();
     updateTaskList();
 }
@@ -59,8 +42,8 @@ function deleteTask(id) {
 }
 
 /**
- * Toggles task from 'to do' to 'doing' to 'done'.
- * @param {*} id 
+ * Toggles main task status from 'to do' to 'doing' to 'done'.
+ * @param {int} id Main task id
  */
 function toggleTask(id) {
     for (let task of tasks) {
@@ -68,15 +51,15 @@ function toggleTask(id) {
             switch (task.status) {
                 case "to do":
                     task.status = "doing";
-                    document.getElementById(`primary-task-status-${task.id}`).style.background = "#FFE03D";
+                    document.getElementById(`primary-task-status-${task.id}`).style.background = "#E9CC38";
                     break;
                 case "doing":
                     task.status = "done";
-                    document.getElementById(`primary-task-status-${task.id}`).style.background = "#0CF51A";
+                    document.getElementById(`primary-task-status-${task.id}`).style.background = "#0FD018";
                     break;
                 case "done":
                     task.status = "to do";
-                    document.getElementById(`primary-task-status-${task.id}`).style.background = "#F50C55";
+                    document.getElementById(`primary-task-status-${task.id}`).style.background = "#DB0E33";
                     break;
                 default:
                     console.log("error");
@@ -86,6 +69,11 @@ function toggleTask(id) {
     updateTaskList();
 }
 
+/**
+ * 
+ * @param {int} id 
+ * @returns 
+ */
 function editTask(id) {
     let newInputName = document.getElementById("new-input-name");
     let newInputDesc = document.getElementById("new-input-desc");
@@ -94,9 +82,9 @@ function editTask(id) {
 
     closeAlertBox('edit-main-task');
 
-    if (name.length > 18) return alert("Please use 18 characters or less in task name.");
-    if (desc.length > 40) return alert("Please use 40 characters or less in task description.");
-    if (name == "" || name == " ") return alert("Please do not leave the name area empty.");
+    if (name.length > 18) return customAlertBox("Please use 18 characters or less in task name.");
+    if (desc.length > 40) return customAlertBox("Please use 40 characters or less in task description.");
+    if (name == "" || name == " ") return customAlertBox("Please do not leave the name area empty.");
 
     for (let task of tasks) {
         if (id == task.id) {
@@ -110,48 +98,43 @@ function editTask(id) {
     updateTaskList();
 }
 
+/**
+ * Creates Sub Task Element into the page, inserts into the task subtasks array and updates JSON file.
+ * @param {object} task 
+ * @returns Alert Message if InputName is empty.
+*/
 function createSubTask(id) {
     let subInputName = document.getElementById("sub-input-name");
     let subInputDesc = document.getElementById("sub-input-desc");
     let name = subInputName.value;
     let desc = subInputDesc.value;
-    let secondId;
 
     if (name) {
-        if (name.length > 18) return alert("Please use 18 characters or less in task name.");
-        if (desc.length > 40) return alert("Please use 40 characters or less in task description.");
-        if (name == "" || name == " ") return alert("Please do not leave the name area empty.");
-        subInputName.value = "";
-        subInputDesc.value = "";
+        if (name.length > 18) return customAlertBox("Please use 18 characters or less in task name.");
+        if (desc.length > 40) return customAlertBox("Please use 40 characters or less in task description.");
+    } else {
         closeAlertBox('create-sub-task');
+        return customAlertBox("Please do not leave the name area empty.");
     }
+
+    closeAlertBox('create-sub-task');
 
     for (let task of tasks) {
         if (task.id == id) {
-            secondId = task.subtasks.length;
-            task.subtasks.push({ id: secondId, name: name, desc: desc, status: "to do" });
+            task.subtasks.push({ id: task.subtasks.length, name: name, desc: desc, status: "to do" });
+            let subtask = task.subtasks[task.subtasks.length - 1];
+            createSubTaskElement(task.id, subtask);
         }
     }
-
-    let ul = document.getElementById(`secondary-task-list-${id}`);
-    let li = document.createElement("li");
-    li.setAttribute('class', 'secundary-task');
-    li.setAttribute('id', `secundary-task-${id}-${secondId}`);
-    li.innerHTML = `
-        <div class="task-status" id="secundary-task-status-${id}-${secondId}" onclick="toggleSubTask(${id},${secondId})"></div>
-        <div class="task-name" id="secundary-task-name-${id}-${secondId}">${name}</div>
-        <div class="task-desc" id="secundary-task-desc--${id}-${secondId}">${desc}</div>
-        <div class="task-buttons">
-            <button class="btn" onclick="editSubTaskAlertBox(${id}, ${secondId})"><i class="fa fa-pencil"></i></button>
-            <button class="btn" onclick="deleteSubTask(${id}, ${secondId})"><i class="fa fa-trash"></i></button>
-        </div>
-    `;
-
-    ul.appendChild(li);
 
     updateTaskList();
 }
 
+/**
+ * Toggles sub task status from 'to do' to 'doing' to 'done'.
+ * @param {int} id Main task id
+ * @param {int} secondId Sub task id
+ */
 function toggleSubTask(id, secondId) {
     for (let task of tasks) {
         if (id == task.id) {
@@ -181,6 +164,12 @@ function toggleSubTask(id, secondId) {
     updateTaskList();
 }
 
+/**
+ * 
+ * @param {int} id Main task id
+ * @param {int} secondId Sub Task id
+ * @returns Alert Message if InputName is empty.
+ */
 function editSubTask(id, secondId) {
     let newInputName = document.getElementById("new-input-name");
     let newInputDesc = document.getElementById("new-input-desc");
@@ -189,9 +178,9 @@ function editSubTask(id, secondId) {
 
     closeAlertBox('edit-sub-task');
 
-    if (name.length > 18) return alert("Please use 18 characters or less in task name.");
-    if (desc.length > 40) return alert("Please use 40 characters or less in task description.");
-    if (name == "" || name == " ") return alert("Please do not leave the name area empty.");
+    if (name.length > 18) return customAlertBox("Please use 18 characters or less in task name.");
+    if (desc.length > 40) return customAlertBox("Please use 40 characters or less in task description.");
+    if (name == "" || name == " ") return customAlertBox("Please do not leave the name area empty.");
 
     for (let task of tasks) {
         if (id == task.id) {
@@ -209,6 +198,11 @@ function editSubTask(id, secondId) {
     updateTaskList();
 }
 
+/**
+ * It doesn't delete from JSON, instead updates the status to 'deleted' and loadSubTasksElements() wont load task in page.
+ * @param {int} id Main task id
+ * @param {int} secondId Sub Task Id
+ */
 function deleteSubTask(id, secondId) {
     for (let task of tasks) {
         if (id == task.id) {
@@ -222,4 +216,20 @@ function deleteSubTask(id, secondId) {
 
     updateTaskList();
     document.getElementById(`secundary-task-${id}-${secondId}`).remove();
+}
+
+function hideButtons(id,secondId){
+    if(secondId == undefined){
+        document.getElementById(`primary-task-buttons-${id}`).style.display = "none";
+    } else {
+        document.getElementById(`secundary-task-buttons-${id}-${secondId}`).style.display = "none";
+    }
+}
+
+function showButtons(id,secondId){
+    if(secondId == undefined){
+        document.getElementById(`primary-task-buttons-${id}`).style.display = "block";
+    } else {
+        document.getElementById(`secundary-task-buttons-${id}-${secondId}`).style.display = "block";
+    }    
 }

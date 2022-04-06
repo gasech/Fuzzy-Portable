@@ -10,7 +10,7 @@ var contandoTemporizador = false;
 function increaseTimer(){
 	if(contandoTemporizador == false){
 		if(tmin >= 60){
-			alert("You cannot increase the timer to more than 60 minutes.");
+			customAlertBox("You cannot increase the timer to more than 60 minutes.");
 		}else { 
 			tmin += 5;
 			document.getElementById("timer-minutes").innerHTML = tmin; 
@@ -21,7 +21,7 @@ function increaseTimer(){
 function decreaseTimer(){
 	if(contandoTemporizador == false){
 		if(tmin<6){
-			alert("You cannot decrease the timer to less than 5 minutes.");
+			customAlertBox("You cannot decrease the timer to less than 5 minutes.");
 		}else {
 			if(tmin<11){ 
 				tmin -= 5;
@@ -80,7 +80,7 @@ setInterval(function contarTemporizador(){
 		if(tmin < 0){
 			playSound();
 			tocarSom();
-			alert("Time is up!");	
+			customAlertBox("Time is up!");	
 		}
 	}
 }, 10);

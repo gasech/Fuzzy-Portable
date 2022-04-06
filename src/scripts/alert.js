@@ -83,7 +83,25 @@ function editSubTaskAlertBox(id, secondId) {
     alertsArea.appendChild(alertBox);
 }
 
+function customAlertBox(message) {
+    const alertsArea = document.getElementById(`alerts`);
+    let alertBox = document.createElement("div"); 
+
+    alertBox.setAttribute('id', 'custom-alert-box');
+    alertBox.innerHTML = `
+    <h3 class="alert-box-title">Alert</h3>
+    <button class="btn close-alert" onclick="closeAlertBox('custom-alert-box')"><i class="fa fa-close"></i></button>
+    <p>${message}</p>
+    `;
+
+    alertsArea.appendChild(alertBox);
+}
+
 function closeAlertBox(element) {
     let alertBox = document.getElementById(`${element}`);
     alertBox.remove();
 }
+
+// function customTransparentBackground(element){
+//     let transparentBackground = document.createElement(div);
+// }

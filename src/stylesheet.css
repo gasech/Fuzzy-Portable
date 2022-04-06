@@ -3,7 +3,6 @@
     src: url("fonts/Proxima Nova Alt Light.otf") format("opentype");
 }
 
-
 /* Scrollbar Width */
 
 ::-webkit-scrollbar {
@@ -11,20 +10,17 @@
     width: 15px;
 }
 
-
 /* Scrollbar Track */
 
 ::-webkit-scrollbar-track {
     background: #121212;
 }
 
-
 /* Scrollbar Handle */
 
 ::-webkit-scrollbar-thumb {
     background: #5A5A5A;
 }
-
 
 /* Scrollbar Handle on hover */
 
@@ -61,7 +57,7 @@ body {
 #title-bar {
     position: fixed;
     top: 0px;
-    height: 100px;
+    height: 70px;
     width: 100%;
     background: none;
     z-index: 99999;
@@ -84,21 +80,29 @@ body {
 #minimizeButton {
     height: 31px;
     width: 45px;
-    background: #000000c4;
+    background-color: rgba(31, 31, 31, 0.3);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 
 #minimizeButton:hover {
-    background: #474747c4;
+    background-color: rgb(58, 58, 58, 0.3);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 
 #closeButton {
     height: 31px;
     width: 45px;
-    background: #000000c4;
+    background-color: rgba(31, 31, 31, 0.3);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 
 #closeButton:hover {
-    background: #cd1a2cc4;
+    background: rgba(205, 26, 44, 0.3);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 
 .win-icon {
@@ -112,8 +116,6 @@ body {
 /* Titles */
 
 .title {
-    margin-top: 25%;
-    margin-top: 35px;
     color: #ddd;
     font-size: 32px;
     font-family: ProximaNovaAltLight;
@@ -136,6 +138,32 @@ hr.separator {
     text-shadow: 2px 2px 8px #121212b0;
 }
 
+
+#date-display {
+    position: relative;
+    left: 50%;
+    margin-top: 7%;
+    font-family: ProximaNovaAltLight;
+    transform: translateX(-50%) translateY(-50%);
+    color: #ddd;
+    font-size: 30px;
+    letter-spacing: 7px;
+}
+
+#clock-display {
+    position: relative;
+    left: 50%;
+    margin-top: 3%;
+    font-family: ProximaNovaAltLight;
+    transform: translateX(-50%) translateY(-50%);
+    color: #ddd;
+    font-size: 100px;
+    letter-spacing: 7px;
+}
+
+#timers-row {
+    margin-top: 50px;
+}
 
 /* Cronometer */
 
@@ -162,41 +190,11 @@ hr.separator {
     display: inline;
 }
 
-#date-display {
-    position: relative;
-    left: 50%;
-    margin-top: 10%;
-    font-family: ProximaNovaAltLight;
-    transform: translateX(-50%) translateY(-50%);
-    color: #ddd;
-    font-size: 30px;
-    letter-spacing: 7px;
-}
-
-#clock-display {
-    position: relative;
-    left: 50%;
-    margin-top: 3%;
-    font-family: ProximaNovaAltLight;
-    transform: translateX(-50%) translateY(-50%);
-    color: #ddd;
-    font-size: 100px;
-    letter-spacing: 7px;
-}
-
-#timers-row {
-    margin-top: 50px;
-}
-
-#todolist-row {
-    margin-top: 150px;
-}
-
 
 /* To Do List */
 
-#todolist-title {
-    margin-top: 5%;
+#todolist-row {
+    margin-top: 150px;
 }
 
 .create-task {
@@ -221,6 +219,10 @@ hr.separator {
     font-style: normal;
     font-weight: normal;
     color: #ddd;
+}
+
+.secundary-task-list{
+    list-style-type: none;
 }
 
 .primary-task {
@@ -255,6 +257,7 @@ hr.separator {
 }
 
 .task-buttons {
+    display: none;
     float: right;
     width: 20%;
     margin-left: auto;
@@ -262,8 +265,6 @@ hr.separator {
 
 .secundary-task {
     position: relative;
-    display: flex;
-    flex-direction: row;
     margin-top: 0.8%;
     padding: 10px;
     font-size: 20px;
@@ -272,6 +273,11 @@ hr.separator {
     border-collapse: collapse;
     border-radius: 10px;
     filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
+}
+
+.secundary-task-a {
+    display: flex;
+    flex-direction: row;
 }
 
 .btn {
@@ -293,7 +299,7 @@ hr.separator {
 
 #help-text {
     margin-top: 15px;
-    margin-bottom: 30%;
+    margin-bottom: 10%;
     color: #bbb;
 }
 
@@ -306,9 +312,11 @@ hr.separator {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    height: 400px;
+    height: 320px;
     width: 350px;
-    background-color: #3A3A3A;
+    background-color: rgb(58, 58, 58, 0.3);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
     border-radius: 60px;
     -webkit-animation-name: fadeIn;
@@ -319,15 +327,17 @@ hr.separator {
 
 #create-sub-task,
 #edit-main-task,
-#edit-sub-task {
+#edit-sub-task,#custom-alert-box {
     display: block;
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    height: 400px;
+    height: 320px;
     width: 350px;
-    background-color: #3A3A3A;
+    background-color: rgb(58, 58, 58, 0.3);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
     border-radius: 60px;
     -webkit-animation-name: fadeIn;
@@ -336,12 +346,31 @@ hr.separator {
     animation-duration: 0.9s;
 }
 
+#custom-alert-box{
+    height: 200px;
+    width: 400px;
+    -webkit-app-region: no-drag;
+}
+
+#custom-alert-box p{
+    color: #ddd;
+    margin-top: 35px;
+    text-align: center;
+}
+
+#custom-alert-box h3{
+    margin-left: 100px;
+    color: #ddd;
+    text-align: center;
+}
+
+
 .alert-box-title {
-    width: 150px;
+    width: 190px;
     font-weight: lighter;
     color: white;
     position: relative;
-    margin-left: 90px;
+    margin-left: 70px;
     margin-top: 30px;
 }
 
