@@ -15,6 +15,7 @@ const createWindow = () => {
         height: 730,
         resizable: false,
         frame: false,
+        icon: __dirname + '/1024px-Fuzzy-Portable.ico',
         autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true,

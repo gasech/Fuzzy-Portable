@@ -12,8 +12,8 @@ function createTask(task) {
     if (inputName.value == "" || inputName.value == " ") return customAlertBox("Please do not leave the name area empty.");
 
     let taskId = tasks.length;
-    tasks.push({ id: taskId, name: inputName.value, desc: inputDesc.value, status: "to do", subtasks: [] });
-    task = tasks[taskId - 1];
+    tasks.push({ id: taskId, name: inputName.value, desc: inputDesc.value, status: "to_do", subtasks: [] });
+    task = tasks[tasks.length - 1];
 
     inputName.value = "";
     inputDesc.value = "";
@@ -42,14 +42,14 @@ function deleteTask(id) {
 }
 
 /**
- * Toggles main task status from 'to do' to 'doing' to 'done'.
+ * Toggles main task status from 'to_do' to 'doing' to 'done'.
  * @param {int} id Main task id
  */
 function toggleTask(id) {
     for (let task of tasks) {
         if (id == task.id) {
             switch (task.status) {
-                case "to do":
+                case "to_do":
                     task.status = "doing";
                     document.getElementById(`primary-task-status-${task.id}`).style.background = "#E9CC38";
                     break;
@@ -58,7 +58,7 @@ function toggleTask(id) {
                     document.getElementById(`primary-task-status-${task.id}`).style.background = "#0FD018";
                     break;
                 case "done":
-                    task.status = "to do";
+                    task.status = "to_do";
                     document.getElementById(`primary-task-status-${task.id}`).style.background = "#DB0E33";
                     break;
                 default:
@@ -121,7 +121,7 @@ function createSubTask(id) {
 
     for (let task of tasks) {
         if (task.id == id) {
-            task.subtasks.push({ id: task.subtasks.length, name: name, desc: desc, status: "to do" });
+            task.subtasks.push({ id: task.subtasks.length, name: name, desc: desc, status: "to_do" });
             let subtask = task.subtasks[task.subtasks.length - 1];
             createSubTaskElement(task.id, subtask);
         }
@@ -131,7 +131,7 @@ function createSubTask(id) {
 }
 
 /**
- * Toggles sub task status from 'to do' to 'doing' to 'done'.
+ * Toggles sub task status from 'to_do' to 'doing' to 'done'.
  * @param {int} id Main task id
  * @param {int} secondId Sub task id
  */
@@ -141,17 +141,17 @@ function toggleSubTask(id, secondId) {
             for (let subtask of task.subtasks) {
                 if (subtask.id == secondId) {
                     switch (subtask.status) {
-                        case "to do":
+                        case "to_do":
                             subtask.status = "doing";
-                            document.getElementById(`secundary-task-status-${id}-${subtask.id}`).style.background = "#FFE03D";
+                            document.getElementById(`secundary-task-status-${id}-${subtask.id}`).style.background = "#E9CC38";
                             break;
                         case "doing":
                             subtask.status = "done";
-                            document.getElementById(`secundary-task-status-${id}-${subtask.id}`).style.background = "#0CF51A";
+                            document.getElementById(`secundary-task-status-${id}-${subtask.id}`).style.background = "#0FD018";
                             break;
                         case "done":
-                            subtask.status = "to do";
-                            document.getElementById(`secundary-task-status-${id}-${subtask.id}`).style.background = "#F50C55";
+                            subtask.status = "to_do";
+                            document.getElementById(`secundary-task-status-${id}-${subtask.id}`).style.background = "#DB0E33";
                             break;
                         default:
                             console.log("error");

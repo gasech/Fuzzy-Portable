@@ -4,7 +4,7 @@ const fs = require('fs');
 let tasks = [];
 
 // Dev Mode
-const devMode = true;
+const devMode = false;
 
 // Json Path
 let taskJsonPath;

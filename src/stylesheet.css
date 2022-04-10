@@ -197,10 +197,6 @@ hr.separator {
     margin-top: 150px;
 }
 
-.create-task {
-    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
-}
-
 *:focus {
     outline: none;
     text-decoration: none;
@@ -242,7 +238,7 @@ hr.separator {
 .task-status {
     width: 26px;
     height: 26px;
-    background: #F50C55;
+    background: #DB0E33;
     box-sizing: border-box;
     border-radius: 50%;
 }
@@ -282,6 +278,7 @@ hr.separator {
 
 .btn {
     background-color: rgb(49, 49, 49);
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
     border: none;
     color: white;
     padding: 5px 10px;

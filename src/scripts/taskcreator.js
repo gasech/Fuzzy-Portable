@@ -1,3 +1,7 @@
+/**
+ * Inserts task object into main task list using DOM
+ * @param {Object} task 
+ */
 function createTaskElement(task) {
     let statusColor = getStatusColor(task.status);
 
@@ -34,6 +38,11 @@ function createTaskElement(task) {
     document.getElementById(`primary-task-status-${task.id}`).style.background = statusColor;
 }
 
+/**
+ *  Inserts subtask object into primary task list using DOM
+ * @param {int} id 
+ * @param {Object} subtask 
+ */
 function createSubTaskElement(id, subtask) {
     let statusColor = getStatusColor(subtask.status);
 
@@ -67,20 +76,17 @@ function createSubTaskElement(id, subtask) {
     document.getElementById(`secundary-task-status-${id}-${subtask.id}`).style.background = statusColor;
 }
 
+/**
+ * 
+ * @param {String} status Status name 
+ * @returns Hex color
+ */
 function getStatusColor(status) {
-    let statusColor;
-    
-    switch (status) {
-        case "to do":
-            statusColor = "#DB0E33";
-            break;
-        case "doing":
-            statusColor = "#E9CC38";
-            break;
-        case "done":
-            statusColor = "#0FD018";
-            break;
+    const colors = {
+        to_do: "#DB0E33",
+        doing: "#E9CC38",
+        done: "#0FD018"
     }
 
-    return statusColor;
+    return colors[status];
 }
