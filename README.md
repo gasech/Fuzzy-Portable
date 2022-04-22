@@ -1,9 +1,16 @@
 # Fuzzy Portable
 Portable version of <a href="https://github.com/gasech/Fuzzy-Potato" target="_blank">Fuzzy Potato</a>
 
+## Features
+
+* Date and time
+* Timer and Cronometer
+* To Do (Tasks and subtasks)
+
 <p align="center">
-<img src="https://media.discordapp.net/attachments/362749870387363841/958728059412967474/unknown.png?width=1115&height=676" alt="Focus Screenshot" width="800" height="450"/>
-<img src="https://media.discordapp.net/attachments/362749870387363841/958729854554083378/unknown.png?width=1135&height=676" alt="Focus Screenshot 2" width="800" height="450"/>
+<img src="https://media.discordapp.net/attachments/904631303733919764/966852514102280194/unknown.png?width=1150&height=676" alt="Focus Screenshot" width="800" height="450"/>
+<img src="https://media.discordapp.net/attachments/904631303733919764/966852663536943165/unknown.png?width=1150&height=676" alt="Focus Screenshot 2" width="800" height="450"/>
+<img src="https://media.discordapp.net/attachments/904631303733919764/966852728607350794/unknown.png?width=1150&height=676" alt="Focus Screenshot 3" width="800" height="450"/>
 </p>
 
 ## Programming language and Tools used
@@ -15,11 +22,3 @@ Portable version of <a href="https://github.com/gasech/Fuzzy-Potato" target="_bl
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/></a> 
 <a href="https://www.electronjs.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/electron/electron-original.svg" alt="electron" width="40" height="40"/> </a> 
 </p>
-
-## Features
-
-* Date
-* Clock
-* Timer
-* Cronometer
-* To Do List

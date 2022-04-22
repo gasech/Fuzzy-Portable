@@ -1,33 +1,3 @@
-@font-face {
-    font-family: ProximaNovaAltLight;
-    src: url("fonts/Proxima Nova Alt Light.otf") format("opentype");
-}
-
-/* Scrollbar Width */
-
-::-webkit-scrollbar {
-    display: none;
-    width: 15px;
-}
-
-/* Scrollbar Track */
-
-::-webkit-scrollbar-track {
-    background: #121212;
-}
-
-/* Scrollbar Handle */
-
-::-webkit-scrollbar-thumb {
-    background: #5A5A5A;
-}
-
-/* Scrollbar Handle on hover */
-
-::-webkit-scrollbar-thumb:hover {
-    background: #898989;
-}
-
 html {
     scroll-behavior: smooth;
 }
@@ -35,35 +5,93 @@ html {
 body {
     margin: 0;
     padding: 0;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-color: #242424;
-    font-family: ProximaNovaAltLight;
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* IE10+/Edge */
+    background: rgba(171, 171, 171, 0.3);
+    font-family: 'Segoe UI';
+    font-weight: lighter;
     user-select: none;
-    /* Standard */
 }
 
+*:focus {
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 15px;
+}
+
+/* Background */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%; 
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#background-blur {
+    height: 100%; 
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+/* Buttons */
+.buttonf {
+    background: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+/* Buttons Hover */
+
+.buttonf:hover,
+.btn-create:hover {
+    background: rgba(171, 171, 171, 0.3);
+    color: white;
+}
+
+.buttonf:focus {
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+.buttonf:active {
+    background: rgba(171, 171, 171, 0.6);
+}
+
+.active {
+    background: rgba(171, 171, 171, 0.3);
+}
 
 /* Custom Title Bar */
 
 #title-bar {
     position: fixed;
     top: 0px;
-    height: 70px;
+    height: 31px;
     width: 100%;
-    background: none;
+    background: rgba(31, 31, 31, 0.5);
     z-index: 99999;
     -webkit-app-region: drag;
 }
 
+#app-title {
+    position: fixed;
+    font-size: 13px;
+    top: 5px;
+    left: 13px;
+    color: #ddd;
+}
 
 /* Window Buttons */
 
@@ -80,29 +108,19 @@ body {
 #minimizeButton {
     height: 31px;
     width: 45px;
-    background-color: rgba(31, 31, 31, 0.3);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
 }
 
 #minimizeButton:hover {
-    background-color: rgb(58, 58, 58, 0.3);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    background: rgb(58, 58, 58, 0.5);
 }
 
 #closeButton {
     height: 31px;
     width: 45px;
-    background-color: rgba(31, 31, 31, 0.3);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
 }
 
 #closeButton:hover {
-    background: rgba(205, 26, 44, 0.3);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    background: rgba(187, 1, 20, 0.5);
 }
 
 .win-icon {
@@ -112,60 +130,89 @@ body {
     height: 10px;
 }
 
+/* Nav Bar */
+#nav-bar {
+    position: fixed;
+    top: 31px;
+    left: 0px;
+    height: 100%;
+    width: 100px;
+    background: rgba(31, 31, 31, 0.5);
+    z-index: 99999;
+}
+
+#nav-buttons {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-button {
+    height: 80px;
+    width: 80px;
+    margin: 5px 10px;
+    padding: 0;
+}
+
+/* Content */
+#content {
+    margin-left: 100px;
+    margin-top: 31px;
+}
+
+/* Sections */
+#home-section,#tasks-section,#timers-section,#settings-section {
+    display: none;
+    margin-top: 50px;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.9s;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
 
 /* Titles */
 
 .title {
     color: #ddd;
-    font-size: 32px;
-    font-family: ProximaNovaAltLight;
-    text-align: center;
+    font-size: 28px;
+    font-weight: lighter;
+    text-align: left;
+    margin: 10px;
 }
+
+/* Hr */
 
 hr.separator {
     border: 1px solid #ddd;
-    margin-right: 20%;
-    margin-left: 20%;
+    margin: 10px;
 }
 
-.shadow {
-    -moz-box-shadow: inset 0 0 10px #121212b0;
-    -webkit-box-shadow: inset 0 0 10px #121212b0;
-    box-shadow: inset 0 0 10px #121212b0;
+#buttons-wrap {
+    margin-bottom: 5%;
 }
 
-.textShadow {
-    text-shadow: 2px 2px 8px #121212b0;
-}
-
+/* Date Display */
 
 #date-display {
     position: relative;
-    left: 50%;
-    margin-top: 7%;
-    font-family: ProximaNovaAltLight;
-    transform: translateX(-50%) translateY(-50%);
+    margin-bottom: 0;
     color: #ddd;
     font-size: 30px;
     letter-spacing: 7px;
 }
 
+/* Clock Display */
+
 #clock-display {
+    margin-top: 5%;
     position: relative;
-    left: 50%;
-    margin-top: 3%;
-    font-family: ProximaNovaAltLight;
-    transform: translateX(-50%) translateY(-50%);
     color: #ddd;
-    font-size: 100px;
+    font-size: 72px;
     letter-spacing: 7px;
 }
 
-#timers-row {
-    margin-top: 50px;
-}
-
-/* Cronometer */
+/* Cronometer Section */
 
 #cronometer-time {
     font-size: 72px;
@@ -177,8 +224,7 @@ hr.separator {
     display: inline;
 }
 
-
-/* Timer */
+/* Timer Section */
 
 #timer-time {
     font-size: 72px;
@@ -192,14 +238,19 @@ hr.separator {
 
 
 /* To Do List */
-
-#todolist-row {
-    margin-top: 150px;
+#tasks-row {
+    display: flex;
+    height: 33px;
+    margin-top: -10px;
+    margin-bottom: 20px;
 }
 
-*:focus {
-    outline: none;
-    text-decoration: none;
+.button-create { 
+    position: absolute;
+    top: 14px;
+    left: 85px;
+    width: 32px;
+    height: 32px;
 }
 
 #main-task-list {
@@ -207,8 +258,7 @@ hr.separator {
     color: #ddd;
     width: 80%;
     margin-top: 1%;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0;
 }
 
 #main-task-list li {
@@ -217,7 +267,7 @@ hr.separator {
     color: #ddd;
 }
 
-.secundary-task-list{
+.secundary-task-list {
     list-style-type: none;
 }
 
@@ -226,16 +276,15 @@ hr.separator {
     display: flex;
     flex-direction: row;
     margin-top: 0.8%;
-    padding: 10px;
+    padding: 7px 10px;
     height: 50px;
     font-size: 21px;
-    background-color: #3A3A3A;
-    border-collapse: collapse;
     border-radius: 10px;
-    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
+    background-color: rgba(31, 31, 31, 0.5);
 }
 
 .task-status {
+    margin-top: 5px;
     width: 26px;
     height: 26px;
     background: #DB0E33;
@@ -262,13 +311,11 @@ hr.separator {
 .secundary-task {
     position: relative;
     margin-top: 0.8%;
-    padding: 10px;
+    padding: 7px 10px;
     font-size: 20px;
-    height: 48px;
-    background-color: #3A3A3A;
-    border-collapse: collapse;
+    height: 50px;
     border-radius: 10px;
-    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
+    background-color: rgba(31, 31, 31, 0.5);
 }
 
 .secundary-task-a {
@@ -276,26 +323,10 @@ hr.separator {
     flex-direction: row;
 }
 
-.btn {
-    background-color: rgb(49, 49, 49);
-    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-
-/* Darker background on mouse-over */
-
-.btn:hover,
-.btn-create:hover {
-    background-color: rgb(131, 131, 131);
-}
-
 #help-text {
-    margin-top: 15px;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 25px;
     margin-bottom: 10%;
     color: #bbb;
 }
@@ -306,16 +337,14 @@ hr.separator {
 #alert-box {
     display: none;
     position: fixed;
-    left: 50%;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    height: 320px;
+    height: 300px;
     width: 350px;
-    background-color: rgb(58, 58, 58, 0.3);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    background-color: rgba(58, 58, 58, 0.3);
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
-    border-radius: 60px;
+    border-radius: 10px;
     -webkit-animation-name: fadeIn;
     -webkit-animation-duration: 0.9s;
     animation-name: fadeIn;
@@ -324,38 +353,37 @@ hr.separator {
 
 #create-sub-task,
 #edit-main-task,
-#edit-sub-task,#custom-alert-box {
+#edit-sub-task,
+#custom-alert-box {
     display: block;
     position: fixed;
-    left: 50%;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    height: 320px;
+    height: 300px;
     width: 350px;
-    background-color: rgb(58, 58, 58, 0.3);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    background-color: rgba(58, 58, 58, 0.3);
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
-    border-radius: 60px;
+    border-radius: 10px;
     -webkit-animation-name: fadeIn;
     -webkit-animation-duration: 0.9s;
     animation-name: fadeIn;
     animation-duration: 0.9s;
 }
 
-#custom-alert-box{
+#custom-alert-box {
     height: 200px;
     width: 400px;
     -webkit-app-region: no-drag;
 }
 
-#custom-alert-box p{
+#custom-alert-box p {
     color: #ddd;
     margin-top: 35px;
     text-align: center;
 }
 
-#custom-alert-box h3{
+#custom-alert-box h3 {
     margin-left: 100px;
     color: #ddd;
     text-align: center;
@@ -365,7 +393,7 @@ hr.separator {
 .alert-box-title {
     width: 190px;
     font-weight: lighter;
-    color: white;
+    color: #ddd;
     position: relative;
     margin-left: 70px;
     margin-top: 30px;
@@ -380,14 +408,12 @@ hr.separator {
 #input-name,
 #sub-input-name,
 #new-input-name {
-    margin-top: 20px;
+    margin-top: 30px;
     background: none;
     border: none;
-    font-weight: 800;
     font-size: 28px;
     line-height: 44px;
     width: 80%;
-    border-radius: 5px;
     color: #C4C4C4;
 }
 
@@ -400,7 +426,6 @@ hr.separator {
     color: #C4C4C4;
     font-size: 19px;
     width: 80%;
-    border-radius: 5px;
     resize: none;
 }
 
@@ -408,20 +433,20 @@ hr.separator {
     position: fixed;
     bottom: 5px;
     transform: translate(-50%, -50%);
-    background-color: rgb(49, 49, 49);
+    background: none;
     border: none;
     color: #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 5px 10px;
     font-size: 19px;
     cursor: pointer;
-    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
 }
 
 @-webkit-keyframes fadeIn {
     from {
         opacity: 0
     }
+
     to {
         opacity: 1
     }
@@ -431,6 +456,7 @@ hr.separator {
     from {
         opacity: 0
     }
+
     to {
         opacity: 1
     }

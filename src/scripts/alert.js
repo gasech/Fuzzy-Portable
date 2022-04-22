@@ -22,8 +22,8 @@ function editMainTaskAlertBox(id) {
 
     alertBox.setAttribute('id', 'edit-main-task');
     alertBox.innerHTML = `
-    <h3 class="alert-box-title">Edit Task</h3>
-    <button class="btn close-alert" onclick="closeAlertBox('edit-main-task')"><i class="fa fa-close"></i></button>
+    <h3 class="alert-box-title">edit task</h3>
+    <button class="buttonf close-alert" onclick="closeAlertBox('edit-main-task')"><i class="fa fa-close"></i></button>
     <form id="edit-task-form" onSubmit="return false;">
         <input type="text" id="new-input-name" value="${name}" placeholder="+ Add a Name" name="inputsubname" autocomplete="off" maxlength="18" spellcheck="false"><br>
         <textarea id="new-input-desc" cols="2" placeholder="+ Add a description" name="inputsubdesc" autocomplete="off" maxlength="40" spellcheck="false">${desc}</textarea><br>
@@ -40,8 +40,8 @@ function createSubTaskAlertBox(id) {
     let alertBox = document.createElement("div");
     alertBox.setAttribute('id', `create-sub-task`);
     alertBox.innerHTML = `
-    <h3 class="alert-box-title">Create SubTask</h3>
-    <button class="btn close-alert" onclick="closeAlertBox('create-sub-task')"><i class="fa fa-close"></i></button>
+    <h3 class="alert-box-title">create subtask</h3>
+    <button class="buttonf close-alert" onclick="closeAlertBox('create-sub-task')"><i class="fa fa-close"></i></button>
     <form id="create-subtask-form" onSubmit="return false;">
         <input type="text" id="sub-input-name" placeholder="+ Add a Name" name="inputsubname" autocomplete="off" maxlength="18" spellcheck="false"><br>
         <textarea id="sub-input-desc" cols="2" placeholder="+ Add a description" name="inputsubdesc" autocomplete="off" maxlength="40" spellcheck="false"></textarea><br>
@@ -71,8 +71,8 @@ function editSubTaskAlertBox(id, secondId) {
 
     alertBox.setAttribute('id', 'edit-sub-task');
     alertBox.innerHTML = `
-    <h3 class="alert-box-title">Edit SubTask</h3>
-    <button class="btn close-alert" onclick="closeAlertBox('edit-sub-task')"><i class="fa fa-close"></i></button>
+    <h3 class="alert-box-title">edit subtask</h3>
+    <button class="buttonf close-alert" onclick="closeAlertBox('edit-sub-task')"><i class="fa fa-close"></i></button>
     <form id="edit-subtask-form" onSubmit="return false;">
         <input type="text" id="new-input-name" value="${name}" placeholder="+ Add a Name" name="inputsubname" autocomplete="off" maxlength="18" spellcheck="false"><br>
         <textarea id="new-input-desc" cols="2" placeholder="+ Add a description" name="inputsubdesc" autocomplete="off" maxlength="40" spellcheck="false">${desc}</textarea><br>
@@ -90,7 +90,7 @@ function customAlertBox(message) {
     alertBox.setAttribute('id', 'custom-alert-box');
     alertBox.innerHTML = `
     <h3 class="alert-box-title">Alert</h3>
-    <button class="btn close-alert" onclick="closeAlertBox('custom-alert-box')"><i class="fa fa-close"></i></button>
+    <button class="buttonf close-alert" onclick="closeAlertBox('custom-alert-box')"><i class="fa fa-close"></i></button>
     <p>${message}</p>
     `;
 
@@ -101,7 +101,3 @@ function closeAlertBox(element) {
     let alertBox = document.getElementById(`${element}`);
     alertBox.remove();
 }
-
-// function customTransparentBackground(element){
-//     let transparentBackground = document.createElement(div);
-// }

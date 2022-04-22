@@ -10,16 +10,16 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 const createWindow = () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
-        icon: '',
         width: 1245,
         height: 730,
         resizable: false,
         frame: false,
-        icon: __dirname + '/1024px-Fuzzy-Portable.ico',
+        icon: __dirname + '/Fuzzy-Portable-icon.png',
         autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
+            
         }
     });
 

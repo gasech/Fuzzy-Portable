@@ -19,13 +19,13 @@ function createTaskElement(task) {
                             ${task.desc}
                         </div>
                         <div class="task-buttons" id="primary-task-buttons-${task.id}">      
-                            <button class="btn" onclick="createSubTaskAlertBox(${task.id})">
+                            <button class="buttonf" onclick="createSubTaskAlertBox(${task.id})">
                                 <i class="fa fa-plus"></i>
                             </button>
-                            <button class="btn" onclick="editMainTaskAlertBox(${task.id},'${task.name}','${task.desc}')">
-                                <i class="fa fa-pencil"></i>
+                            <button class="buttonf" onclick="editMainTaskAlertBox(${task.id},'${task.name}','${task.desc}')">
+                                <i class="fa fa-edit"></i>
                             </button>
-                            <button class="btn" onclick="deleteTask(${task.id})">
+                            <button class="buttonf" onclick="deleteTask(${task.id})">
                                 <i class="fa fa-trash"></i>
                             </button>
                         </div>
@@ -62,10 +62,10 @@ function createSubTaskElement(id, subtask) {
                             ${subtask.desc}
                         </div>
                         <div class="task-buttons" id="secundary-task-buttons-${id}-${subtask.id}">
-                            <button class="btn" onclick="editSubTaskAlertBox(${id}, ${subtask.id})">
-                                <i class="fa fa-pencil"></i>
+                            <button class="buttonf" onclick="editSubTaskAlertBox(${id}, ${subtask.id})">
+                                <i class="fa fa-edit"></i>
                             </button>
-                            <button class="btn" onclick="deleteSubTask(${id}, ${subtask.id})">
+                            <button class="buttonf" onclick="deleteSubTask(${id}, ${subtask.id})">
                                 <i class="fa fa-trash"></i>
                             </button>
                         </div>
