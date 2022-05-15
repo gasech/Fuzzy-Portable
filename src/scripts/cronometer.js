@@ -12,11 +12,8 @@ function pauseCronometer() {
 }
 
 function resetCronometer(){
-	contandoCronometro = false;	
-	mil=0;
-	seg=0;
-	min=0;
-	hr=0;
+	pauseCronometer();
+	mil = seg = min = hr = 0;
 
 	document.getElementById("cronometer-seconds").innerHTML = "0" + seg;
 	document.getElementById("cronometer-minutes").innerHTML = "0" + min;

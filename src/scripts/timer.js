@@ -35,7 +35,7 @@ function decreaseTimer(){
 }
 
 function resetTimer(){
-	contandoTemporizador = false;
+	pauseTimer();
 	tseg = 0;
 	tmin = 5;
 	document.getElementById("timer-minutes").innerHTML = "0" + tmin; 

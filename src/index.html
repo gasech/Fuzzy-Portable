@@ -49,114 +49,109 @@
         </div>
     </div>
     <div style="display:none;" id="content" class="animate-bottom">
-        <div class="container">
-            <div class="row " id="home-section">
-                <!-- Clock and Date row -->
-                <div class="col-sm">
-                    <h1 class="title" id="greetings"">Good morning</h1>
-                    <hr class="separator">
-                    <div id="clock-display" onload="showTime()"></div>
-                    <div id="date-display" onload="showDate()"></div>
-                </div>
+    <div id="home-section">
+        <!-- Clock and Date row -->
+        <div class="box">
+            <h1 class="title" id="greetings"">Good morning</h1>
+            <div id="clock-display" class="display" onload="showTime()"></div>
+            <hr id="line"/>
+            <div id="date-display" class="display" onload="showDate()"></div>
+        </div>
+    </div>
+    <div id="tasks-section">
+        <!-- To-do List Row -->
+        <div class="box">
+            <div id="tasks-row">
+                <h1 class="title">Tasks</h1>
+                <button class="buttonf" onclick="createAlertBox()">
+                    <i class="fas fa-plus"></i>
+                </button>
             </div>
-            <div class="row" id="tasks-section">
-                <!-- To-do List Row -->
-                <div class="col-sm">
-                    <div id="tasks-row">
-                        <h1 class="title">Tasks</h1>
-                        <button class="buttonf button-create" onclick="toggleCreateBoxAlert()">
-                            <i class="fas fa-plus fa-1x"></i>
-                        </button>
-                        <p id="help-text">* right-click in any status to toggle between to do, doing or done.</p>
-                    </div>
-                    <hr class="separator">
-                    <ul id="main-task-list">
-                    </ul>
-
-                </div>
-            </div>
-            <div class="row" id="timers-section">
-                <!-- Cronometer and Timers row -->
-                <div class="col-sm">
-                    <h1 class="title">Cronometer</h1>
-                    <hr class="separator">
-                    <div id="cronometer-time">
-                        <p id="cronometer-hours">00</p>:
-                        <p id="cronometer-minutes">00</p>:
-                        <p id="cronometer-seconds">00</p>
-                    </div>
-                    <div id="buttons-wrap">
-                        <button class="buttonf" id="start-button" onclick="startCronometer()">
-                            <i class="fas fa-play"></i> <!-- Play -->
-                        </button>
-                        <button class="buttonf" id="pause-button" onclick="pauseCronometer()">
-                            <i class="fas fa-pause"></i> <!-- Pause -->
-                        </button>
-                        <button class="buttonf" id="reset-button" onclick="resetCronometer()">
-                            <i class="fas fa-stop"></i> <!-- Stop -->
-                        </button>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <h1 class="title">Timer</h1>
-                    <hr class="separator">
-                    <div id="timer-time">
-                        <p id="timer-minutes">05</p>:
-                        <p id="timer-seconds">00</p>
-                    </div>
-
-                    <div id="buttons-wrap">
-                        <button class="buttonf" id="increase-button" onclick="increaseTimer()">
-                            <i class="fas fa-plus"></i> <!-- Aumentar -->
-                        </button>
-
-                        <button class="buttonf" id="decrease-button" onclick="decreaseTimer()">
-                            <i class="fas fa-minus"></i> <!-- Diminuir -->
-                        </button>
-
-                        <button class="buttonf" id="start-button" onclick="startTimer()">
-                            <i class="fas fa-play"></i> <!-- Play -->
-                        </button>
-
-                        <button class="buttonf" id="pause-button" onclick="pauseTimer()">
-                            <i class="fas fa-pause"></i> <!-- Pause -->
-                        </button>
-
-                        <button class="buttonf" id="reset-button" onclick="resetTimer()">
-                            <i class="fas fa-redo"></i> <!-- Stop -->
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="row" id="settings-section">
-                <div class="col-sm">
-                    <h1 class="title">Settings</h1>
-                    <hr class="separator">
-                </div>
+            <ul id="main-task-list">
+            </ul>
+            <div id="invis">
             </div>
         </div>
+    </div>
+    <div id="timers-section">
+        <div id="timers-tabs">
 
-        <div id="alerts">
-            <div id="alert-box">
-                <button class="buttonf close-alert" onclick="toggleCreateBoxAlert()"><i
-                        class="fa fa-close"></i></button>
-                <form id="todolist-form" onSubmit="return false">
-                    <h3 class="alert-box-title">create task</h3>
-                    <input type="text" id="input-name" placeholder="+ Add a Name" name="inputname" autocomplete="off"
-                        maxlength="18" spellcheck="false"><br>
-                    <textarea id="input-desc" cols="2" placeholder="+ Add a description" name="inputdesc"
-                        autocomplete="off" maxlength="40" spellcheck="false"></textarea><br>
-                    <input type="submit" class="btn-create" value="create" onclick="createTask()" />
-                </form>
+        </div>
+        <!-- Cronometer and Timer row -->
+        <div class="box">
+            <h1 class="title">Cronometer</h1>
+            <div class="timer">
+                <span id="cronometer-hours">00</span>:<span id="cronometer-minutes">00</span>:<span id="cronometer-seconds">00</span>
+            </div>
+            <div class="buttons-wrap">
+                <button class="buttonf" id="start-button" onclick="startCronometer()">
+                    <i class="fas fa-play"></i> <!-- Play -->
+                </button>
+                <button class="buttonf" id="pause-button" onclick="pauseCronometer()">
+                    <i class="fas fa-pause"></i> <!-- Pause -->
+                </button>
+                <button class="buttonf" id="reset-button" onclick="resetCronometer()">
+                    <i class="fas fa-stop"></i> <!-- Stop -->
+                </button>
             </div>
         </div>
+        <div class="box">
+            <h1 class="title">Timer</h1>
+            <div class="timer">
+                <span id="timer-minutes">05</span>:<span id="timer-seconds">00</span>
+            </div>
+            <div class="buttons-wrap">
+                <button class="buttonf" id="increase-button" onclick="increaseTimer()">
+                    <i class="fas fa-plus"></i> <!-- Aumentar -->
+                </button>
+                <button class="buttonf" id="decrease-button" onclick="decreaseTimer()">
+                    <i class="fas fa-minus"></i> <!-- Diminuir -->
+                </button>
+                <button class="buttonf" id="start-button" onclick="startTimer()">
+                    <i class="fas fa-play"></i> <!-- Play -->
+                </button>
+                <button class="buttonf" id="pause-button" onclick="pauseTimer()">
+                    <i class="fas fa-pause"></i> <!-- Pause -->
+                </button>
+                <button class="buttonf" id="reset-button" onclick="resetTimer()">
+                    <i class="fas fa-redo"></i> <!-- Stop -->
+                </button>
+            </div>
+        </div>
+        <div class="box">
+            <h1 class="title">Time Tracker</h1>
+            <div class="timer">
+                <span id="time-tracker-hours">00</span>:<span id="time-tracker-minutes">00</span>:<span id="time-tracker-seconds">00</span>
+            </div>
+            <form class="form" onSubmit="return false">
+                <input type="text" id="task_to_track" class="inputf" placeholder="Task" autocomplete="off" maxlength="30" spellcheck="false"><br>
+            </form>
+            <div id="invis">
+            </div>
+        </div>
+    </div>
 
-        <audio id="quietKnock">
-            <source src="sounds/quiet-knock.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+    <div id="settings-section">
+        <div class="box">
+            <h1 class="title">Preferences</h1>
+            <form class="form" onSubmit="return false">
+                <input type="text" id="bgimg_url" class="inputf" placeholder="Background Image Url"
+                    autocomplete="off" maxlength="400" spellcheck="false"><br>
+                <input type="text" id="prim_color" class="inputf" placeholder="Primary Color"
+                    autocomplete="off" maxlength="30" spellcheck="false"><br>
+                <input type="submit" class="buttonf btn-form" value="Apply" onclick="applyPreferences()"/>
+                <input type="submit" class="buttonf btn-form" value="Cancel" onclick="fillPreferences()"/>
+            </form>
+        </div>
+    </div>
+
+    <div id="alerts">
+    </div>
+
+    <audio id="quietKnock">
+        <source src="sounds/quiet-knock.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     </div>
 
     <script src="scripts/taskcreator.js"></script>
@@ -165,8 +160,6 @@
     <!-- Toggle Tabs Script -->
     <script src="scripts/loader.js"></script>
     <!-- Loader Script -->
-    <script src="scripts/pageloader.js"></script>
-    <!-- Page Loader Script -->
     <script src="scripts/clock.js"></script>
     <!-- Clock Script -->
     <script src="scripts/date.js"></script>
@@ -179,6 +172,8 @@
     <!-- Task Loader Script -->
     <script src="scripts/task.js"></script>
     <!-- Task Creator Script -->
+    <script src="scripts/preferences.js"></script>
+    <!-- Preferences Script-->
     <script src="scripts/alert.js"></script>
     <!-- Alert Box Script -->
 </body>

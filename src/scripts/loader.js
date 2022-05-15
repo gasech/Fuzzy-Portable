@@ -12,7 +12,6 @@ function showPage() {
 }
 
 const path = getPath();
-const preferences = getPreferences();
 
 function getPath(){
     if (fs.existsSync('resources/app/src/')) {
@@ -34,11 +33,31 @@ function getPreferences(){
     return localPreferences;
 }
 
+function setPreferences(preferences){
+    try {
+        fs.writeFileSync(path + 'preferences.json', JSON.stringify(preferences, null, 2))
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+function fillPreferences(){
+    let preferences = getPreferences();
+
+    document.getElementById('bgimg_url').value = preferences.backgroundImage;
+    document.getElementById('prim_color').value = preferences.primaryColor;
+}
+
 (function setup(){
-    // Set background
+    let preferences = getPreferences();
+    // Set Background
     document.getElementById("background").style.backgroundImage = `url(${preferences.backgroundImage})`;
+    // Set Primary Color
+    document.querySelector(':root').style.setProperty('--primaryColor', preferences.primaryColor);
     // Set Home Menu
     toggleTab("home");
+    // Fill Preferences Inputs
+    fillPreferences();
 })();
 
 // Tasks Object Array

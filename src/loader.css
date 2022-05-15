@@ -7,7 +7,7 @@
   width: 120px;
   height: 120px;
   margin: -76px 0 0 -76px;
-  border: 16px solid rgb(58, 58, 58, 0.3);
+  border: 16px solid #3a3a3a4d;
   border-radius: 50%;
   border-top: 16px solid #ddddddc1;
   -webkit-animation: spin 2s linear infinite;
@@ -65,10 +65,4 @@
     top: 100%;
     opacity: 1
   }
-}
-
-#content {
-  display: none;
-  text-align: center;
-  margin-top: 30px;
 }
