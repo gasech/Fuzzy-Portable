@@ -1,7 +1,6 @@
 var mil,seg,min,hr;
 mil = seg = min = hr = 0;
 var contandoCronometro = false;
-var tempo = document.getElementById("cronometer-time").innerHTML;
 
 function startCronometer() {
 	contandoCronometro = true;

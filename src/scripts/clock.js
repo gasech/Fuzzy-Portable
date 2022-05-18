@@ -16,11 +16,11 @@ function showTime(){
     }    
 
     if(session == "AM"){
-        greetingsText.innerHTML = "Good Morning";
+        greetingsText.innerHTML = `Good Morning <i class="fas fa-cloud-sun"></i>`;
     } else if(session == "PM" && h < 6) {
-        greetingsText.innerHTML = "Good afternoon";
+        greetingsText.innerHTML = `Good Afternoon <i class="fas fa-sun"></i>`;
     } else {
-        greetingsText.innerHTML = "Good night";
+        greetingsText.innerHTML = `Good Night <i class="fas fa-moon"></i>`;
     }
     
     h = (h < 10) ? "0" + h : h;

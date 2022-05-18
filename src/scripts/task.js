@@ -196,3 +196,24 @@ function inputValidation(){
     
     return true;
 }
+
+function createALotOfTasks(){
+    for(let i = 0; i < 1000; i++){
+        createDefaultTask(i);
+    }
+}
+
+function createDefaultTask(id) {
+    tasks.push({ id: id, name: 'default task', desc: ' ', important: false, subtasks: [] });
+
+    createTaskElement({ id: id, name: 'default task', desc: ' ', important: false, subtasks: [] });
+    updateTaskList();
+}
+
+function clearAllTasks(){
+    for(let task of tasks){
+        document.getElementById(`main-task-${task.id}`).remove();
+    }
+    tasks = [];
+    updateTaskList();
+}

@@ -1,7 +1,7 @@
 {
     "name": "Fuzzy-Portable",
     "productName": "Fuzzy-Portable",
-    "version": "0.3.0",
+    "version": "0.5.0",
     "description": "Small web application with a dark themed and clean look made for productivity.",
     "main": "src/index.js",
     "scripts": {
@@ -46,7 +46,7 @@
     },
     "dependencies": {
         "electron-json-storage": "^4.5.0",
-        "electron-reload": "^2.0.0-alpha.1",
+        "electron-reloader": "^1.2.3",
         "electron-squirrel-startup": "^1.0.0",
         "fs": "^0.0.1-security"
     },
@@ -56,6 +56,7 @@
         "@electron-forge/maker-rpm": "^6.0.0-beta.61",
         "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
         "@electron-forge/maker-zip": "^6.0.0-beta.61",
-        "electron": "15.1.2"
+        "electron": "15.1.2",
+        "electron-reload": "^2.0.0-alpha.1"
     }
 }

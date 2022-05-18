@@ -56,6 +56,8 @@ function fillPreferences(){
     document.querySelector(':root').style.setProperty('--primaryColor', preferences.primaryColor);
     // Set Home Menu
     toggleTab("home");
+    // Set Cronometer Menu
+    toggleTabTimers("cronometer")
     // Fill Preferences Inputs
     fillPreferences();
 })();

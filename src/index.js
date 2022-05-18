@@ -1,6 +1,11 @@
-const { app, BrowserWindow, ipcMain} = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const ipc = ipcMain;
+
+require('electron-reloader')(module, {
+    debug: true,
+    watchRenderer: true
+});
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -19,7 +24,7 @@ const createWindow = () => {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
-            
+
         }
     });
 

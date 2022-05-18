@@ -51,94 +51,122 @@
     <div style="display:none;" id="content" class="animate-bottom">
     <div id="home-section">
         <!-- Clock and Date row -->
+        <div style="width:480px" class="nav-section inline">
+            <button class="buttonf nav-section-button">
+                <span class="display" id="greetings"></span>
+            </button>
+            <button class="buttonf nav-section-button">
+                <div id="clock-display" class="display" onload="showTime()"></div>
+            </button>
+            <button class="buttonf nav-section-button">
+                <div id="date-display" class="display" onload="showDate()"></div>
+            </button>
+        </div>
         <div class="box">
-            <h1 class="title" id="greetings"">Good morning</h1>
-            <div id="clock-display" class="display" onload="showTime()"></div>
-            <hr id="line"/>
-            <div id="date-display" class="display" onload="showDate()"></div>
+            <h1 style="padding: 100px; text-align:center; color:#ddd" >Welcome to Fuzzy Portable!</h1>
         </div>
     </div>
     <div id="tasks-section">
         <!-- To-do List Row -->
-        <div class="box">
-            <div id="tasks-row">
-                <h1 class="title">Tasks</h1>
-                <button class="buttonf" onclick="createAlertBox()">
-                    <i class="fas fa-plus"></i>
-                </button>
-            </div>
+        <div style="width:136px" class="nav-section inline">
+            <button class="buttonf nav-section-button" onclick="createAlertBox()">
+                Create Task <i class="fas fa-plus"></i>
+            </button>
+        </div>
+        <div class="box">      
             <ul id="main-task-list">
             </ul>
-            <div id="invis">
-            </div>
         </div>
     </div>
     <div id="timers-section">
-        <div id="timers-tabs">
-
+        <div style="width:340px" class="nav-section inline">
+            <button class="buttonf nav-section-button" id="timer-button" onclick="toggleTabTimers('timer')">
+                Timer <i class="fas fa-hourglass"></i>
+            </button>
+            <button class="buttonf nav-section-button" id="cronometer-button" onclick="toggleTabTimers('cronometer')">
+                Cronometer <i class="fas fa-stopwatch"></i>
+            </button>
+            <button class="buttonf nav-section-button" id="tracker-button" onclick="toggleTabTimers('tracker')">
+                Tracker <i class="fas fa-business-time"></i>
+            </button>
         </div>
         <!-- Cronometer and Timer row -->
-        <div class="box">
-            <h1 class="title">Cronometer</h1>
-            <div class="timer">
-                <span id="cronometer-hours">00</span>:<span id="cronometer-minutes">00</span>:<span id="cronometer-seconds">00</span>
-            </div>
-            <div class="buttons-wrap">
-                <button class="buttonf" id="start-button" onclick="startCronometer()">
-                    <i class="fas fa-play"></i> <!-- Play -->
-                </button>
-                <button class="buttonf" id="pause-button" onclick="pauseCronometer()">
-                    <i class="fas fa-pause"></i> <!-- Pause -->
-                </button>
-                <button class="buttonf" id="reset-button" onclick="resetCronometer()">
-                    <i class="fas fa-stop"></i> <!-- Stop -->
-                </button>
-            </div>
-        </div>
-        <div class="box">
-            <h1 class="title">Timer</h1>
+        <div id="timer-section" class="box">
             <div class="timer">
                 <span id="timer-minutes">05</span>:<span id="timer-seconds">00</span>
             </div>
             <div class="buttons-wrap">
-                <button class="buttonf" id="increase-button" onclick="increaseTimer()">
+                <button class="buttonf" onclick="increaseTimer()">
                     <i class="fas fa-plus"></i> <!-- Aumentar -->
                 </button>
-                <button class="buttonf" id="decrease-button" onclick="decreaseTimer()">
+                <button class="buttonf" onclick="decreaseTimer()">
                     <i class="fas fa-minus"></i> <!-- Diminuir -->
                 </button>
-                <button class="buttonf" id="start-button" onclick="startTimer()">
+                <button class="buttonf" onclick="startTimer()">
                     <i class="fas fa-play"></i> <!-- Play -->
                 </button>
-                <button class="buttonf" id="pause-button" onclick="pauseTimer()">
+                <button class="buttonf" onclick="pauseTimer()">
                     <i class="fas fa-pause"></i> <!-- Pause -->
                 </button>
-                <button class="buttonf" id="reset-button" onclick="resetTimer()">
-                    <i class="fas fa-redo"></i> <!-- Stop -->
+                <button class="buttonf" onclick="resetTimer()">
+                    <i class="fas fa-stop"></i> <!-- Stop -->
                 </button>
             </div>
         </div>
-        <div class="box">
-            <h1 class="title">Time Tracker</h1>
+        <div id="cronometer-section" class="box">
             <div class="timer">
-                <span id="time-tracker-hours">00</span>:<span id="time-tracker-minutes">00</span>:<span id="time-tracker-seconds">00</span>
+                <span id="cronometer-hours">00</span>:<span id="cronometer-minutes">00</span>:<span id="cronometer-seconds">00</span>
+            </div>
+            <div class="buttons-wrap">
+                <button class="buttonf" onclick="startCronometer()">
+                    <i class="fas fa-play"></i> <!-- Play -->
+                </button>
+                <button class="buttonf" onclick="pauseCronometer()">
+                    <i class="fas fa-pause"></i> <!-- Pause -->
+                </button>
+                <button class="buttonf" onclick="resetCronometer()">
+                    <i class="fas fa-stop"></i> <!-- Stop -->
+                </button>
+            </div>
+        </div>
+        <div id="tracker-section" class="box">
+            <div class="timer">
+                <span id="tracker-hours">00</span>:<span id="tracker-minutes">00</span>:<span id="tracker-seconds">00</span>
+            </div>
+            <div class="buttons-wrap">
+                <button class="buttonf" id="start-button-t" onclick="startTracker()">
+                    <i class="fas fa-play"></i> <!-- Play -->
+                </button>
+                <button class="buttonf" id="pause-button-t" onclick="pauseTracker()">
+                    <i class="fas fa-pause"></i> <!-- Pause -->
+                </button>
+                <button class="buttonf" id="pause-button-t" onclick="stopTracker()">
+                    <i class="fas fa-stop"></i> <!-- Stop -->
+                </button>
             </div>
             <form class="form" onSubmit="return false">
-                <input type="text" id="task_to_track" class="inputf" placeholder="Task" autocomplete="off" maxlength="30" spellcheck="false"><br>
-            </form>
-            <div id="invis">
-            </div>
+                <div class="inline">
+                    <input type="text" id="task_to_track" class="inputf" placeholder="Task" autocomplete="off" maxlength="30" spellcheck="false"><br>
+                </div>
+            </form>        
         </div>
     </div>
 
     <div id="settings-section">
+        <div style="width:310px" class="nav-section inline">
+            <button class="buttonf nav-section-button">
+                Reset Settings <i class="fas fa-redo"></i>
+            </button>
+            <button class="buttonf nav-section-button" onclick="clearAllTasks()">
+                Clear All Tasks <i class="fas fa-hand-sparkles"></i>
+            </button>
+        </div>
         <div class="box">
-            <h1 class="title">Preferences</h1>
             <form class="form" onSubmit="return false">
                 <input type="text" id="bgimg_url" class="inputf" placeholder="Background Image Url"
                     autocomplete="off" maxlength="400" spellcheck="false"><br>
                 <input type="text" id="prim_color" class="inputf" placeholder="Primary Color"
-                    autocomplete="off" maxlength="30" spellcheck="false"><br>
+                    autocomplete="off" maxlength="400" spellcheck="false"><br>
                 <input type="submit" class="buttonf btn-form" value="Apply" onclick="applyPreferences()"/>
                 <input type="submit" class="buttonf btn-form" value="Cancel" onclick="fillPreferences()"/>
             </form>
@@ -168,6 +196,8 @@
     <!-- Cronometer Script -->
     <script src="scripts/timer.js"></script>
     <!-- Timer Script -->
+    <script src="scripts/time_tracker.js"></script>
+    <!-- Time Tracker Script -->
     <script src="scripts/taskloader.js"></script>
     <!-- Task Loader Script -->
     <script src="scripts/task.js"></script>

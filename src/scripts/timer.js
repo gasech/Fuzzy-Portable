@@ -79,7 +79,6 @@ setInterval(function contarTemporizador(){
 
 		if(tmin < 0){
 			playSound();
-			tocarSom();
 			customAlertBox("Time is up!");	
 		}
 	}
@@ -88,11 +87,11 @@ setInterval(function contarTemporizador(){
 
 function playSound(){
 	if(alarmSound){
-		let x = document.getElementById("quietKnock"); 
+		let sound = document.getElementById("quietKnock"); 
 
 		switch(audio){
 			case 1:
-				x.play();
+				sound.play();
 				break;
 			default:
 		}
