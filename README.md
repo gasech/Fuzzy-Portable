@@ -1,5 +1,5 @@
 # Fuzzy Portable
-Portable version of <a href="https://github.com/gasech/Fuzzy-Potato" target="_blank">Fuzzy Potato</a>
+Desktop App made for saving your tasks to help you be more productive in general, you can customize themes and save it all to your PC.
 
 ## Features
 
